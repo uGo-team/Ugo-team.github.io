@@ -1,4 +1,4 @@
-# Ugo Team
+# uGo Team
 
 **Team Members:**
 - Sarah Ouelhadj - 300446640
