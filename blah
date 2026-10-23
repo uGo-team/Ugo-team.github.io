@@ -1,0 +1,658 @@
+
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uGo - Pricing</title>
+
+    <style>
+        /* GENERAL PAGE STYLE */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f6;
+            color: #111;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background-color: white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* HEADER */
+        header {
+            background-color: white;
+            padding: 12px 25px;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        header ul {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header li a {
+            color: #980020;
+            font-size: 15px;
+        }
+
+        header li a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            width: 85px;
+            height: auto;
+        }
+
+        .active {
+            font-weight: bold;
+        }
+
+        .account-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .login {
+            background-color: #980020;
+            color: white;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 7px 20px;
+        }
+
+        .signup {
+            background-color: white;
+            color: #980020;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 7px 20px;
+        }
+
+        /* SECTION 1: PRICING */
+        .pricing-section {
+            min-height: 560px;
+            padding: 35px 30px 65px;
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(255,255,255,0.1),
+                    rgba(255,255,255,0.5) 55%,
+                    white 85%
+                ),
+                url("images/pricing_background.png");
+            background-position: center top;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .pricing-heading {
+            margin-bottom: 75px;
+        }
+
+        .pricing-heading h1 {
+            font-size: 38px;
+            font-weight: normal;
+            margin: 5px 0;
+        }
+
+        .red-text {
+            color: #980020;
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 25px;
+            width: 260px;
+            min-height: 280px;
+            padding: 15px;
+        }
+
+        .direct-card {
+            border-color: #980020;
+            transform: translateY(-25px);
+        }
+
+        .card-heading {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .card-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #980020;
+            color: white;
+            border-radius: 50%;
+            width: 43px;
+            height: 43px;
+            font-size: 24px;
+        }
+
+        .card-title {
+            background-color: #980020;
+            color: white;
+            border-radius: 20px;
+            padding: 9px 15px;
+            font-size: 17px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .pricing-card h3 {
+            font-size: 23px;
+            margin: 8px 0 5px;
+        }
+
+        .pricing-card ul {
+            padding-left: 18px;
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* SECTION 2: DRIVER REGISTRATION */
+        .driver-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            padding: 35px 25px 50px;
+            background-color: #fafafa;
+        }
+
+        .driver-image {
+            height: 330px;
+            background:
+                linear-gradient(
+                    to right,
+                    transparent 65%,
+                    #fafafa
+                ),
+                url("images/driver_photo.png");
+            background-position: center;
+            background-size: cover;
+            border-radius: 8px;
+        }
+
+        .benefits {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid black;
+            border-radius: 22px;
+            padding: 20px 10px;
+            background-color: white;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+        }
+
+        .benefit-icon {
+            font-size: 25px;
+            color: #980020;
+        }
+
+        .driver-payment {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .driver-payment p {
+            margin-bottom: 5px;
+        }
+
+        .driver-payment h2 {
+            font-size: 35px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .driver-info {
+            text-align: right;
+        }
+
+        .driver-info h2 {
+            font-size: 32px;
+            font-weight: normal;
+            margin: 5px 0;
+        }
+
+        .driver-description {
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .driver-button {
+            background-color: #980020;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 28px;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* DRIVER APPLICATION STEPS */
+        .steps {
+            text-align: left;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #980020;
+            color: white;
+            border-radius: 50%;
+            min-width: 43px;
+            height: 43px;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .step p {
+            font-size: 12px;
+            line-height: 1.5;
+            margin: 3px 0;
+        }
+
+        /* SPACE BEFORE FOOTER */
+        .empty-space {
+            height: 170px;
+            background-color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #242021;
+            color: white;
+            padding: 25px 30px 15px;
+            border-radius: 25px 25px 0 0;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 1px solid #555;
+            padding-bottom: 20px;
+        }
+
+        .footer-top nav {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-top a {
+            font-size: 13px;
+        }
+
+        .footer-content {
+            display: flex;
+            gap: 100px;
+            padding: 35px 50px 70px;
+        }
+
+        .footer-content h3 {
+            font-size: 16px;
+        }
+
+        .footer-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-content li {
+            margin: 12px 0;
+            font-size: 13px;
+        }
+
+        .copyright {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        /* SMALL SCREENS */
+        @media (max-width: 800px) {
+            header nav,
+            header ul {
+                flex-wrap: wrap;
+            }
+
+            .pricing-heading {
+                margin-bottom: 35px;
+            }
+
+            .direct-card {
+                transform: none;
+            }
+
+            .driver-section {
+                grid-template-columns: 1fr;
+            }
+
+            .driver-info {
+                text-align: center;
+            }
+
+            .footer-content {
+                gap: 35px;
+                padding: 30px 10px;
+                flex-wrap: wrap;
+            }
+
+            .footer-top {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <img src="images/uGo_icone.png"
+                         alt="uGo logo" class="logo">
+                </li>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="features.html">FEATURES</a></li>
+                <li><a href="team.html">TEAM</a></li>
+                <li><a href="pricing.html" class="active">PRICING</a></li>
+                <li><a href="pricing-fr.html">🇨🇦 French</a></li>
+            </ul>
+
+            <div class="account-buttons">
+                <button class="login">Log In</button>
+                <button class="signup">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- SECTION 1: RIDE PRICING -->
+        <section class="pricing-section">
+
+            <div class="pricing-heading">
+                <h1>Your ride,</h1>
+                <h1 class="red-text">Your budget.</h1>
+            </div>
+
+            <div class="pricing-cards">
+
+                <!-- uGo Pool -->
+                <div class="pricing-card">
+                    <div class="card-heading">
+                        <span class="card-icon">&#9787;</span>
+                        <h2 class="card-title">uGo Pool</h2>
+                    </div>
+
+                    <h3>$0.25/km</h3>
+                    <ul>
+                        <li>Larger vehicles</li>
+                        <li>Travel together with friends</li>
+                        <li>Split the fare</li>
+                        <li>Extra seating and luggage space</li>
+                        <li>Ideal for Province traveling</li>
+                    </ul>
+                </div>
+
+                <!-- uGo Direct -->
+                <div class="pricing-card direct-card">
+                    <div class="card-heading">
+                        <span class="card-icon">&#9787;</span>
+                        <h2 class="card-title">uGo Direct</h2>
+                    </div>
+
+                    <h3>$0.50/km</h3>
+                    <ul>
+                        <li>Private ride just for you</li>
+                        <li>Direct pickup and drop-off</li>
+                        <li>No additional passenger stops</li>
+                        <li>Flexible pickup locations</li>
+                        <li>Ideal for quick, comfortable trips</li>
+                    </ul>
+                </div>
+
+                <!-- uGo Voyage -->
+                <div class="pricing-card">
+                    <div class="card-heading">
+                        <span class="card-icon">&#9679;</span>
+                        <h2 class="card-title">uGo Voyage</h2>
+                    </div>
+
+                    <h3>$0.30/km</h3>
+                    <ul>
+                        <li>Larger vehicles</li>
+                        <li>Travel together with friends</li>
+                        <li>Split the fare</li>
+                        <li>Extra seating and luggage space</li>
+                        <li>Ideal for Province traveling</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- SECTION 2: BECOME A DRIVER -->
+        <section class="driver-section">
+
+            <!-- LEFT SIDE -->
+            <div>
+                <div class="driver-image"></div>
+
+                <div class="benefits">
+                    <div class="benefit">
+                        <span class="benefit-icon">$</span>
+                        <span>Competitive<br>earnings</span>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="benefit-icon">&#9716;</span>
+                        <span>Flexible<br>Hours</span>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="benefit-icon">&#9787;</span>
+                        <span>Support your<br>community</span>
+                    </div>
+                </div>
+
+                <div class="driver-payment">
+                    <p>Annual payment of</p>
+                    <h2>$20/year</h2>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="driver-info">
+
+                <h2>Earn on your schedule.</h2>
+                <h2 class="red-text">Make a difference.</h2>
+
+                <p class="driver-description">
+                    Join our network of drivers and help keep
+                    students moving. Flexible hours, competitive
+                    earning opportunities, and a supportive community.
+                </p>
+
+                <!-- Add registration link when available -->
+                <button class="driver-button">
+                    Join as a Driver &rarr;
+                </button>
+
+                <!-- DRIVER REGISTRATION STEPS -->
+                <div class="steps">
+
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div>
+                            <h3>Apply Online</h3>
+                            <p>
+                                Fill out a short application with
+                                your basic information.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div>
+                            <h3>Verification</h3>
+                            <p>
+                                Complete the required background
+                                and document checks.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div>
+                            <h3>Get Approved</h3>
+                            <p>
+                                Once approved, you'll receive all
+                                the information you need to start driving.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div>
+                            <h3>Start Earning</h3>
+                            <p>
+                                Go online, accept ride requests,
+                                and earn on your schedule.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="empty-space"></div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-top">
+            <img src="images/uGo_icone.png"
+                 alt="uGo logo" class="logo">
+
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="features.html">Features</a>
+                <a href="team.html">Team</a>
+                <a href="pricing.html"><b>Pricing</b></a>
+            </nav>
+
+            <small>Where will uGo?</small>
+        </div>
+
+        <div class="footer-content">
+
+            <section>
+                <h3>Features</h3>
+                <ul>
+                    <li><a href="features.html">Book a ride</a></li>
+                    <li><a href="features.html">Plan a ride for later</a></li>
+                    <li><a href="features.html">Become a uGo driver</a></li>
+                    <li><a href="features.html">uGo Map</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Useful links</h3>
+                <ul>
+                    <li><a href="team.html">About us</a></li>
+                    <li><a href="#">Help Centre</a></li>
+                    <li><a href="team.html">Contact us</a></li>
+                </ul>
+            </section>
+
+        </div>
+
+        <p class="copyright">
+            &copy; Copyright 2026 All Rights Reserved
+            &bull; Terms and conditions
+        </p>
+
+    </footer>
+
+</div>
+</body>
+</html>
