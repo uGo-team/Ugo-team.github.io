@@ -1,0 +1,94 @@
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 25px;
+    background-color: #ffffff;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    list-style: none;
+}
+
+.nav-logo img{
+    height: 40px;
+}
+
+/* éléments du menu */
+.nav-list li{
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+/* séparateurs */
+.nav-list li:not(.nav-logo):not(:last-child)::after{
+    content: "";
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 2px;
+    height: 40px;
+    background: black;
+}
+
+/* liens */
+.nav-list a{
+    text-decoration: none;
+    color: #8f001a;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.nav-list a.active{
+    font-weight: bold;
+}
+
+/* boutons */
+.nav-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-left: 30px;
+}
+
+/* bouton Log In */
+.nav-buttons button:first-child{
+    background-color: #8f001a;
+    color: white;
+
+    border: 2px solid #333;
+    border-radius: 30px;
+
+    width: 100%;
+    height: 5%;
+
+    font-size: 90%;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.nav-buttons button:last-child{
+    background-color: white;
+    color: #8f001a;
+
+    border: 2px solid #333;
+    border-radius: 30px;
+
+    width: 100%;
+    height: 5%;
+
+    font-size: 90%;
+    font-weight: 600;
+
+    cursor: pointer;
+}
