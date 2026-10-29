@@ -1,0 +1,68 @@
+Style guidelines uGo
+
+Overall Look and Feel of uGo
+===============================
+uGo is designed to provide a clear and straightforward user experience for University of Ottawa students. The interface prioritizes simplicity, readability, and efficient access to information. Visual elements should help users complete actions quickly without unnecessary distractions. The design should remain clean and functional while maintaining a professional appearance.
+A lot of white space so each section is easy to scan. Also English and French pages follow the same style since it is used by students who are usually in a rush, a simple look without distractions will be more effective.
+
+Visual Identity
+========
+uGo visual identity is inspired by the University of Ottawa's official colours. The interface combines strong university branding with a modern web experience, creating a familiar and trustworthy environment for students. Consistency across all pages is essential to ensure a seamless experience.
+Don't add any colours, fonts or styles that aren't in the guide because it can make the website look unfinished.
+
+
+Colours
+========
+Primary Garnet should attract attention to important actions and key information. Charcoal Grey should be used to structure content and improve readability. Polar Grey should provide visual balance and create a clean interface.
+
+uOttawa official colours source: https://www.uottawa.ca/about-us/administration-services/brand
+
+
+Primary Garnet
+RGB 143-0-26
+HEX #8f001a
+PMS 7427 C Custom
+CMYK 9-100-73-35
+
+Charcoal Grey
+RGB 45-45-44
+HEX #2d2d2c
+PMS Black C -93% tint
+CMYK 32-31-35-80
+
+Polar Grey
+RGB 242-242-242
+HEX #f2f2f2
+PMS Warm Gray 1 C
+CMYK 4-3-3-0
+
+Iconography
+===========
+Icons should communicate actions visually and support the user's understanding of features. Simple illustrations related to transportation, routes, vehicles, passengers, and locations are encouraged. Icons should remain consistent in style across the platform.
+Single-colour graphic in garnet or charcoal so everything matches the overall look.
+Same icon for the same feature on every page so users can begin to recognise features.
+
+Typography
+==========
+Roboto will be used throughout the platform. Its readability and versatility make it suitable for navigation menus, feature cards, forms, buttons, and page content. Typography should establish a clear hierarchy, allowing users to quickly identify important information.
+Heading 1=biggest and bold, then header 2 then feature 3 so it shows the user what is most important
+Also only regular or bold fonts to make the pages look more clean and organized.
+
+Poppins will be used throughout the platform. Its readability, versatility, modern design and sleek overall feel make it appropriate for our brand image and suitable for navigation menus, feature cards, forms, buttons, and page content.
+
+Or the typography could be Work Sans to match with uOttawa’s brand identity.
+source:  https://www.uottawa.ca/about-us/administration-services/brand 
+
+Links
+=====
+Links will not be underlined. They will use uGo's visual identity colours and will slightly change appearance when hovering to provide visual feedback to users. Links should remain simple, readable, and consistent with the overall interface. 
+
+Buttons
+=======
+Buttons should clearly indicate available actions. Primary actions should use Primary Garnet, while secondary actions should remain visually less prominent. Button labels should be short, direct, and action-oriented.
+Dark garnet when hovering because it shows that it is a button
+Slightly rounded counters and same size on every page (consistency is key)
+
+Everything is in a central position, with the same padding on every section to make everything look more even.
+One column for phone users and make columns for computer users because students will use uGo on their phones
+footers have no bullet points and equal spacing to make it look clean
