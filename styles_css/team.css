@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+ 
+/* ---------- COLOURS (CSS variables) ----------
+   If we change a colour here, it changes on every page */
+:root {
+  --garnet: #8f001a;        /* Primary Garnet: important actions */
+  --garnet-dark: #6b0014;   /* darker garnet for button hover */
+  --charcoal: #2d2d2c;      /* Charcoal Grey: text */
+  --polar: #f2f2f2;         /* Polar Grey: page background */
+  --white: #ffffff;
+  --light-grey: #d9d9d9;    /* lines */
+  --footer-bg: #24242e;     /* footer background */
+  --footer-line: #555560;   /* footer divider lines */
+  --footer-muted: #a5a5b0;  /* copyright text */
+  --footer-hover: #b69cff;  /* footer link hover */
+}
+ 
+ 
+/* ---------- GENERAL (whole page) ---------- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--charcoal);
+  background-color: var(--polar);
+}
+ 
+img {
+  max-width: 100%;
+  height: auto;
+}
+ 
+hr {
+  border: 0;
+  border-top: 1px solid var(--light-grey);
+}
+ 
+/* no bullet points in menus and lists */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ 
+li {
+  list-style: none;
+}
+ 
+ 
+/* ---------- TYPOGRAPHY ---------- */
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0 0 16px 0;
+}
+ 
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 0 16px 0;
+}
+ 
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+}
+ 
+p {
+  margin: 0 0 16px 0;
+}
+ 
+ 
+/* ---------- LINKS ---------- */
+a {
+  color: var(--charcoal);
+  text-decoration: none;
+}
+ 
+a:hover {
+  color: var(--garnet);
+}
+ 
+a[aria-current="page"] {
+  color: var(--garnet);
+  font-weight: bold;
+}
+ 
+/* shows where we are when using the Tab key */
+a:focus,
+button:focus {
+  outline: 3px solid var(--garnet);
+  outline-offset: 2px;
+}
+ 
+ 
+/* ---------- BUTTONS ---------- */
+button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 24px;
+  border: 2px solid var(--garnet);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--garnet);
+  cursor: pointer;
+}
+ 
+button:hover {
+  background-color: var(--garnet);
+  color: var(--white);
+}
+ 
+.btn-primary {
+  background-color: var(--garnet);
+  color: var(--white);
+}
+ 
+.btn-primary:hover {
+  background-color: var(--garnet-dark);
+  border-color: var(--garnet-dark);
+}
+ 
+ 
+/* ---------- HEADER / NAV BAR ---------- */
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 16px;
+ 
+  padding: 10px 25px;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--light-grey);
+}
+ 
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex: 1;
+}
+ 
+.nav-logo img {
+  height: 40px;
+}
+ 
+/* menu items */
+.nav-list li {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+ 
+/* black separators between menu items */
+.nav-list li:not(.nav-logo):not(:last-child)::after {
+  content: "";
+  position: absolute;
+ 
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+ 
+  width: 2px;
+  height: 40px;
+  background: #000000;
+}
+ 
+/* menu links */
+.nav-list a {
+  text-decoration: none;
+  color: var(--garnet);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+ 
+.nav-list a.active {
+  font-weight: bold;
+}
+ 
+/* Log In / Sign Up buttons */
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ 
+.nav-buttons button {
+  width: 100%;
+  border: 2px solid #333333;
+  border-radius: 30px;
+  padding: 6px 24px;
+  font-size: 90%;
+  font-weight: 600;
+  cursor: pointer;
+}
+ 
+/* first button: garnet background */
+.nav-buttons button:first-child {
+  background-color: var(--garnet);
+  color: var(--white);
+}
+ 
+/* second button: white background */
+.nav-buttons button:last-child {
+  background-color: var(--white);
+  color: var(--garnet);
+}
+ 
+.nav-buttons button:first-child:hover {
+  background-color: var(--garnet-dark);
+}
+ 
+.nav-buttons button:last-child:hover {
+  background-color: var(--garnet);
+  color: var(--white);
+}
+ 
+ 
+/* ---------- MAIN (centered container) ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+ 
+section {
+  padding: 40px 0;
+}
+ 
+/* small garnet text above a title (About the team) */
+.label {
+  color: var(--garnet);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+ 
+ 
+/* ---------- TEAM CARDS ---------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+ 
+article {
+  background-color: var(--white);
+  border: 1px solid var(--light-grey);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+}
+ 
+article:hover {
+  border-color: var(--garnet);
+}
+ 
+/* circle with the initials */
+.initials {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--garnet);
+  color: var(--white);
+  font-weight: bold;
+}
+ 
+article p {
+  margin-bottom: 4px;
+}
+ 
+ 
+/* ---------- FEATURES (expandable cards) ---------- */
+main details {
+  width: 400px;
+  max-width: 100%;
+  height: 100px;
+  min-height: 100px;
+  margin: 15px auto;
+ 
+  border: 1px solid #333333;
+  border-top: 5px solid var(--garnet);
+  border-radius: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: height 0.3s, transform 0.3s;
+}
+ 
+main details:hover {
+  transform: scale(1.03);
+}
+ 
+main details[open] {
+  height: auto;
+}
+ 
+main details summary {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 8px 15px;
+  box-sizing: border-box;
+}
+ 
+main details summary > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+ 
+main details summary img {
+  width: 150px;
+  height: auto;
+}
+ 
+main details summary h2 {
+  margin: 0;
+}
+ 
+ 
+/* ---------- FOOTER ---------- */
+footer {
+  position: relative;
+  min-height: 300px;
+  padding: 20px 25px 10px;
+ 
+  background-color: var(--footer-bg);
+  color: var(--white);
+  border-radius: 30px 30px 0 0;
+ 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 45px 1fr auto;
+  column-gap: 15px;
+}
+ 
+/* top navigation */
+footer nav {
+  grid-column: 1 / -1;
+  grid-row: 1;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ 
+  border-bottom: 2px solid var(--footer-line);
+  padding-bottom: 10px;
+}
+ 
+footer nav li {
+  list-style: none;
+}
+ 
+/* logo on the far left, with a divider */
+footer nav li:first-child {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  margin-right: auto;
+  padding-right: 30px;
+  border-right: 2px solid var(--footer-line);
+}
+ 
+/* white logo on the dark footer */
+footer nav img {
+  width: 45px;
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+ 
+/* Home, Features, Team and Pricing links */
+footer nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+ 
+footer nav a:hover {
+  color: var(--footer-hover);
+}
+ 
+/* "Where will Ugo" phrase */
+footer > small {
+  position: absolute;
+  top: 12px;
+  right: 25px;
+  width: 100px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+}
+ 
+/* Features and Useful links columns */
+footer section {
+  padding: 10px 0;
+}
+ 
+footer section:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: center;
+}
+ 
+footer section:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+}
+ 
+footer section h2 {
+  font-size: 22px;
+  margin-bottom: 18px;
+  color: var(--white);
+}
+ 
+footer section li {
+  margin-bottom: 12px;
+}
+ 
+footer section a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+}
+ 
+footer section a:hover {
+  color: var(--footer-hover);
+}
+ 
+footer a:focus {
+  outline-color: var(--white);
+}
+ 
+/* copyright in the middle */
+footer section:nth-of-type(3),
+.copyright {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  padding: 15px 0 0;
+  text-align: center;
+}
+ 
+footer section:nth-of-type(3) small,
+.copyright small {
+  color: var(--footer-muted);
+  font-size: 13px;
+  font-weight: normal;
+}
+ 
+ 
+/* ---------- COMPUTER SCREENS ---------- */
+@media (min-width: 768px) {
+ 
+  h1 {
+    font-size: 48px;
+  }
+ 
+  h2 {
+    font-size: 32px;
+  }
+ 
+  /* header in one row */
+  .nav-bar {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+ 
+  .nav-buttons {
+    margin-left: 30px;
+  }
+ 
+  /* team cards in 3 columns */
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+ 
+@media (min-width: 1024px) {
+ 
+  /* team cards in 5 columns on big screens */
+  .team-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+ 
+ 
+/* ---------- SMALL SCREENS (phones) ---------- */
+@media (max-width: 600px) {
+ 
+  footer {
+    padding: 15px;
+  }
+ 
+  footer nav {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+ 
+  footer nav a {
+    font-size: 10px;
+    margin-left: 8px;
+  }
+ 
+  footer > small {
+    display: none;
+  }
+ 
+  footer section h2 {
+    font-size: 18px;
+  }
+ 
+  footer section a {
+    font-size: 12px;
+  }
+}
+ 
