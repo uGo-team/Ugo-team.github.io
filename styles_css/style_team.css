@@ -1,27 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
  
-/* ---------- COLOURS (CSS variables) ----------
-   If we change a colour here, it changes on every page */
+/* ---------- COLOURS ----------
+   Only the uGo colours from the style guide.
+   If we change a colour here, it changes on the whole page */
 :root {
-  --garnet: #8f001a;        /* Primary Garnet: important actions */
-  --garnet-dark: #6b0014;   /* darker garnet for button hover */
-  --charcoal: #2d2d2c;      /* Charcoal Grey: text */
-  --polar: #f2f2f2;         /* Polar Grey: page background */
+  --garnet: #8f001a;       /* Primary Garnet: important actions */
+  --garnet-dark: #6b0014;  /* darker garnet for hover */
+  --charcoal: #2d2d2c;     /* Charcoal Grey: text and footer */
+  --polar: #f2f2f2;        /* Polar Grey: page background */
   --white: #ffffff;
-  --light-grey: #d9d9d9;    /* lines */
-  --footer-bg: #24242e;     /* footer background */
-  --footer-line: #555560;   /* footer divider lines */
-  --footer-muted: #a5a5b0;  /* copyright text */
-  --footer-hover: #b69cff;  /* footer link hover */
 }
  
  
-/* ---------- GENERAL (whole page) ---------- */
+/* ---------- WHOLE PAGE ---------- */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.7;
   color: var(--charcoal);
   background-color: var(--polar);
 }
@@ -33,10 +29,11 @@ img {
  
 hr {
   border: 0;
-  border-top: 1px solid var(--light-grey);
+  border-top: 1px solid var(--charcoal);
+  margin: 0;
 }
  
-/* no bullet points in menus and lists */
+/* no bullet points (also for the footer menu, where the li are not inside a ul) */
 ul {
   list-style: none;
   margin: 0;
@@ -48,31 +45,36 @@ li {
 }
  
  
-/* ---------- TYPOGRAPHY ---------- */
+/* ---------- TEXT ---------- */
+/* h1 is the biggest, then h2, then h3. Only bold and regular */
 h1 {
-  font-size: 36px;
+  font-size: 40px;
+  line-height: 1.2;
   font-weight: bold;
-  margin: 0 0 16px 0;
+  margin: 0 0 24px 0;
 }
  
 h2 {
-  font-size: 28px;
+  font-size: 30px;
+  line-height: 1.2;
   font-weight: bold;
-  margin: 0 0 16px 0;
+  margin: 0 0 24px 0;
 }
  
 h3 {
   font-size: 20px;
+  line-height: 1.3;
   font-weight: bold;
-  margin: 0 0 8px 0;
+  margin: 0 0 12px 0;
 }
  
 p {
-  margin: 0 0 16px 0;
+  margin: 0 0 20px 0;
 }
  
  
 /* ---------- LINKS ---------- */
+/* no underline, garnet when hovering */
 a {
   color: var(--charcoal);
   text-decoration: none;
@@ -80,11 +82,6 @@ a {
  
 a:hover {
   color: var(--garnet);
-}
- 
-a[aria-current="page"] {
-  color: var(--garnet);
-  font-weight: bold;
 }
  
 /* shows where we are when using the Tab key */
@@ -96,175 +93,161 @@ button:focus {
  
  
 /* ---------- BUTTONS ---------- */
+/* same size and same rounded corners everywhere */
 button {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: bold;
-  padding: 10px 24px;
+  padding: 12px 28px;
   border: 2px solid var(--garnet);
   border-radius: 8px;
-  background-color: transparent;
+  background-color: var(--white);
   color: var(--garnet);
   cursor: pointer;
 }
  
-button:hover {
+/* Log In (first button): garnet background */
+header button:first-child {
   background-color: var(--garnet);
   color: var(--white);
 }
  
-.btn-primary {
-  background-color: var(--garnet);
-  color: var(--white);
-}
- 
-.btn-primary:hover {
+/* dark garnet when hovering */
+button:hover,
+header button:first-child:hover {
   background-color: var(--garnet-dark);
   border-color: var(--garnet-dark);
+  color: var(--white);
 }
  
  
-/* ---------- HEADER / NAV BAR ---------- */
-.nav-bar {
+/* ---------- HEADER ---------- */
+header {
+  background-color: var(--white);
+  padding: 20px 24px;
+}
+ 
+/* phone: everything in one column */
+header nav {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 16px;
- 
-  padding: 10px 25px;
-  background-color: var(--white);
-  border-bottom: 1px solid var(--light-grey);
+  gap: 20px;
 }
  
-.nav-list {
+header ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  flex: 1;
+  gap: 12px 28px;
 }
  
-.nav-logo img {
-  height: 40px;
-}
- 
-/* menu items */
-.nav-list li {
-  flex: 1;
-  text-align: center;
-  position: relative;
-}
- 
-/* black separators between menu items */
-.nav-list li:not(.nav-logo):not(:last-child)::after {
-  content: "";
-  position: absolute;
- 
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
- 
-  width: 2px;
-  height: 40px;
-  background: #000000;
-}
- 
-/* menu links */
-.nav-list a {
-  text-decoration: none;
+header ul a {
   color: var(--garnet);
-  font-size: 1.1rem;
-  font-weight: 500;
 }
  
-.nav-list a.active {
+/* TEAM is the page we are on, so it is bold */
+header li:nth-child(4) a {
   font-weight: bold;
 }
  
-/* Log In / Sign Up buttons */
-.nav-buttons {
+/* the language link */
+header li:last-child a {
+  color: var(--charcoal);
+  font-weight: bold;
+}
+ 
+header img {
+  height: 44px;
+}
+ 
+header nav div {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
- 
-.nav-buttons button {
-  width: 100%;
-  border: 2px solid #333333;
-  border-radius: 30px;
-  padding: 6px 24px;
-  font-size: 90%;
-  font-weight: 600;
-  cursor: pointer;
-}
- 
-/* first button: garnet background */
-.nav-buttons button:first-child {
-  background-color: var(--garnet);
-  color: var(--white);
-}
- 
-/* second button: white background */
-.nav-buttons button:last-child {
-  background-color: var(--white);
-  color: var(--garnet);
-}
- 
-.nav-buttons button:first-child:hover {
-  background-color: var(--garnet-dark);
-}
- 
-.nav-buttons button:last-child:hover {
-  background-color: var(--garnet);
-  color: var(--white);
-}
- 
- 
-/* ---------- MAIN (centered container) ---------- */
-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
- 
-section {
-  padding: 40px 0;
-}
- 
-/* small garnet text above a title (About the team) */
-.label {
-  color: var(--garnet);
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
- 
- 
-/* ---------- TEAM CARDS ---------- */
-.team-grid {
-  display: grid;
-  grid-template-columns: 1fr;
   gap: 16px;
 }
  
-article {
+ 
+/* ---------- MAIN ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+ 
+/* same padding on every section */
+section {
+  padding: 56px 0;
+}
+ 
+/* first line of the big titles is charcoal, the second line is garnet */
+h1,
+main section:last-of-type h2 {
+  color: var(--garnet);
+}
+ 
+h1::first-line,
+main section:last-of-type h2::first-line {
+  color: var(--charcoal);
+}
+ 
+ 
+/* ---------- HERO (first section) ---------- */
+/* box where the group picture will go */
+main section:first-of-type p:last-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  margin-top: 32px;
+  border-radius: 16px;
   background-color: var(--white);
-  border: 1px solid var(--light-grey);
-  border-radius: 8px;
-  padding: 24px;
+  font-weight: bold;
   text-align: center;
 }
  
+ 
+/* ---------- TEAM CARDS (second section) ---------- */
+/* the cards sit in rows and the last row is centred. phone: 1 per row */
+main section:nth-of-type(2) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+ 
+/* the title takes the whole row */
+main section:nth-of-type(2) h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+ 
+article {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--white);
+  border: 1px solid var(--garnet);
+  border-top: 5px solid var(--garnet);
+  border-radius: 8px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+ 
+/* hover: border gets darker and the card zooms in a bit */
 article:hover {
-  border-color: var(--garnet);
+  border-color: var(--garnet-dark);
+  transform: scale(1.05);
+}
+ 
+article p {
+  margin-bottom: 6px;
 }
  
 /* circle with the initials */
-.initials {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 16px auto;
+article p:first-child {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -274,190 +257,122 @@ article:hover {
   font-weight: bold;
 }
  
-article p {
-  margin-bottom: 4px;
+/* name: the box is only as wide as the longest word,
+   so the first name and the last name sit on different lines */
+article h3 {
+  width: min-content;
+  margin: 0 auto 12px auto;
 }
  
- 
-/* ---------- FEATURES (expandable cards) ---------- */
-main details {
-  width: 400px;
+/* last card (Huges Franklin Kuete Yong): wide enough for "Huges Franklin"
+   but too narrow for 3 words, so it splits into 2 lines */
+article:last-child h3 {
+  width: 11em;
   max-width: 100%;
-  height: 100px;
-  min-height: 100px;
-  margin: 15px auto;
- 
-  border: 1px solid #333333;
-  border-top: 5px solid var(--garnet);
-  border-radius: 20px;
-  box-sizing: border-box;
-  overflow: hidden;
-  transition: height 0.3s, transform 0.3s;
-}
- 
-main details:hover {
-  transform: scale(1.03);
-}
- 
-main details[open] {
-  height: auto;
-}
- 
-main details summary {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 8px 15px;
-  box-sizing: border-box;
-}
- 
-main details summary > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
- 
-main details summary img {
-  width: 150px;
-  height: auto;
-}
- 
-main details summary h2 {
-  margin: 0;
 }
  
  
-/* ---------- FOOTER ---------- */
+/* ---------- ABOUT THE TEAM (last section) ---------- */
+/* small garnet label */
+main section:last-of-type p:first-child {
+  display: inline-block;
+  padding: 4px 16px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  background-color: var(--garnet);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: bold;
+}
+ 
+main section:last-of-type img {
+  margin-top: 16px;
+  border-radius: 16px;
+}
+ 
+ 
+/* ---------- FOOTER (small) ---------- */
+/* phone: 1 column */
 footer {
-  position: relative;
-  min-height: 300px;
-  padding: 20px 25px 10px;
- 
-  background-color: var(--footer-bg);
+  background-color: var(--charcoal);
   color: var(--white);
-  border-radius: 30px 30px 0 0;
- 
+  padding: 20px 24px;
+  border-radius: 16px 16px 0 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 45px 1fr auto;
-  column-gap: 15px;
+  grid-template-columns: 1fr;
+  gap: 12px;
 }
  
-/* top navigation */
-footer nav {
-  grid-column: 1 / -1;
-  grid-row: 1;
- 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
- 
-  border-bottom: 2px solid var(--footer-line);
-  padding-bottom: 10px;
-}
- 
-footer nav li {
-  list-style: none;
-}
- 
-/* logo on the far left, with a divider */
-footer nav li:first-child {
-  display: flex;
-  align-items: center;
-  height: 35px;
-  margin-right: auto;
-  padding-right: 30px;
-  border-right: 2px solid var(--footer-line);
-}
- 
-/* white logo on the dark footer */
-footer nav img {
-  width: 45px;
-  height: auto;
-  display: block;
-  filter: brightness(0) invert(1);
-}
- 
-/* Home, Features, Team and Pricing links */
-footer nav a {
+footer a {
   color: var(--white);
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: bold;
-  margin-left: 20px;
-}
- 
-footer nav a:hover {
-  color: var(--footer-hover);
-}
- 
-/* "Where will Ugo" phrase */
-footer > small {
-  position: absolute;
-  top: 12px;
-  right: 25px;
-  width: 100px;
-  text-align: center;
-  font-size: 11px;
-  font-weight: bold;
-}
- 
-/* Features and Useful links columns */
-footer section {
-  padding: 10px 0;
-}
- 
-footer section:nth-of-type(1) {
-  grid-column: 1;
-  grid-row: 2;
-  justify-self: center;
-}
- 
-footer section:nth-of-type(2) {
-  grid-column: 2;
-  grid-row: 2;
-  justify-self: center;
-}
- 
-footer section h2 {
-  font-size: 22px;
-  margin-bottom: 18px;
-  color: var(--white);
-}
- 
-footer section li {
-  margin-bottom: 12px;
-}
- 
-footer section a {
-  color: var(--white);
-  text-decoration: none;
   font-size: 14px;
 }
  
-footer section a:hover {
-  color: var(--footer-hover);
+footer a:hover {
+  color: var(--polar);
 }
  
 footer a:focus {
   outline-color: var(--white);
 }
  
-/* copyright in the middle */
-footer section:nth-of-type(3),
-.copyright {
-  grid-column: 1 / -1;
-  grid-row: 3;
-  padding: 15px 0 0;
-  text-align: center;
+footer h2 {
+  font-size: 18px;
+  margin: 0 0 8px 0;
 }
  
-footer section:nth-of-type(3) small,
-.copyright small {
-  color: var(--footer-muted);
+footer section {
+  padding: 0;
+}
+ 
+footer li {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+ 
+/* top menu: logo and links */
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--polar);
+}
+ 
+footer nav li {
+  margin-bottom: 0;
+}
+ 
+/* logo on the left. the filter turns it white so it shows on the dark footer */
+footer nav li:first-child {
+  margin-right: auto;
+}
+ 
+/* the logo keeps its own colours (red car).
+   it sits on a small white tile so it shows clearly on the dark footer */
+footer nav img {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: none;
+  padding: 6px 12px;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+ 
+footer > small {
   font-size: 13px;
-  font-weight: normal;
+}
+ 
+/* copyright at the bottom */
+footer section:last-of-type {
+  padding-top: 12px;
+  border-top: 1px solid var(--polar);
+}
+ 
+footer section:last-of-type small {
+  font-size: 12px;
 }
  
  
@@ -465,66 +380,115 @@ footer section:nth-of-type(3) small,
 @media (min-width: 768px) {
  
   h1 {
-    font-size: 48px;
+    font-size: 56px;
   }
  
   h2 {
-    font-size: 32px;
+    font-size: 36px;
   }
  
   /* header in one row */
-  .nav-bar {
+  header nav {
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+  }
+ 
+  /* menu items spread out with a line between them */
+  header ul {
+    flex: 1;
     gap: 0;
   }
  
-  .nav-buttons {
-    margin-left: 30px;
+  header li {
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid var(--charcoal);
   }
  
-  /* team cards in 3 columns */
-  .team-grid {
-    grid-template-columns: repeat(3, 1fr);
+  header li:first-child,
+  header li:last-child {
+    flex: 0 0 auto;
+    padding: 0 28px;
+    border-right: none;
+  }
+ 
+  header nav div {
+    margin-left: 24px;
+  }
+ 
+  /* more space between sections */
+  section {
+    padding: 80px 0;
+  }
+ 
+  /* hero and about: text on the left, picture on the right */
+  main section:first-of-type,
+  main section:last-of-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+    align-items: center;
+  }
+ 
+  main section:first-of-type h1,
+  main section:first-of-type p:first-of-type,
+  main section:last-of-type p,
+  main section:last-of-type h2 {
+    grid-column: 1;
+  }
+ 
+  main section:first-of-type p:last-of-type {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    min-height: 360px;
+    margin: 0;
+  }
+ 
+  main section:last-of-type img {
+    grid-column: 2;
+    grid-row: 1 / 5;
+    margin: 0;
+  }
+ 
+  main section:last-of-type p:first-child {
+    justify-self: start;
+  }
+ 
+  /* team cards: 2 per row */
+  main section:nth-of-type(2) {
+    gap: 40px;
+  }
+ 
+  main section:nth-of-type(2) h2 {
+    margin-bottom: 8px;
+  }
+ 
+  article {
+    width: calc((100% - 40px) / 2);
+  }
+ 
+  /* footer in 2 columns. menu, phrase and copyright take the full width */
+  footer {
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 48px;
+  }
+ 
+  footer nav,
+  footer > small,
+  footer section:last-of-type {
+    grid-column: 1 / 3;
+  }
+ 
+  footer > small {
+    text-align: right;
   }
 }
  
 @media (min-width: 1024px) {
  
-  /* team cards in 5 columns on big screens */
-  .team-grid {
-    grid-template-columns: repeat(5, 1fr);
+  /* team cards: 3 per row, the last 2 are centred */
+  article {
+    width: calc((100% - 80px) / 3);
   }
 }
- 
- 
-/* ---------- SMALL SCREENS (phones) ---------- */
-@media (max-width: 600px) {
- 
-  footer {
-    padding: 15px;
-  }
- 
-  footer nav {
-    gap: 10px;
-    flex-wrap: wrap;
-  }
- 
-  footer nav a {
-    font-size: 10px;
-    margin-left: 8px;
-  }
- 
-  footer > small {
-    display: none;
-  }
- 
-  footer section h2 {
-    font-size: 18px;
-  }
- 
-  footer section a {
-    font-size: 12px;
-  }
-}
- 
