@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* uGo colours */
+:root {
+    --garnet: #8f001a;
+    --charcoal: #2d2d2c;
+    --polar: #f2f2f2;
+    --white: #ffffff;
+}
+
+/* Whole page */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--polar);
+    color: var(--charcoal);
+}
+
+/* Main heading */
+h1 {
+    color: var(--garnet);
+    font-size: 48px;
+}
