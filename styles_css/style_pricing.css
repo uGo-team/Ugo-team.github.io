@@ -1,23 +1,577 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-/* uGo colours */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ---------- UGO COLOURS ---------- */
 :root {
     --garnet: #8f001a;
+    --garnet-dark: #6b0014;
     --charcoal: #2d2d2c;
     --polar: #f2f2f2;
     --white: #ffffff;
 }
 
-/* Whole page */
+/* ---------- WHOLE PAGE ---------- */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--charcoal);
     background-color: var(--polar);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--garnet);
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 28px;
+    border: 2px solid var(--garnet);
+    border-radius: 8px;
+    background-color: var(--garnet);
+    color: var(--white);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--garnet-dark);
+    border-color: var(--garnet-dark);
+    color: var(--white);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--garnet);
+    outline-offset: 3px;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    background-color: var(--white);
+    padding: 20px 24px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header li {
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid var(--charcoal);
+}
+
+header li:first-child,
+header li:last-child {
+    flex: 0 0 auto;
+    padding: 0 22px;
+    border-right: none;
+}
+
+header img {
+    height: 44px;
+    width: auto;
+}
+
+header a {
+    color: var(--garnet);
+    font-weight: 500;
+}
+
+header a:hover {
+    color: var(--garnet-dark);
+}
+
+header li:nth-child(5) a {
+    font-weight: bold;
+}
+
+header li:last-child a {
+    color: var(--charcoal);
+    font-weight: bold;
+}
+
+header nav > div {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+header button {
+    padding: 10px 22px;
+}
+
+header button:last-child {
+    background-color: var(--white);
+    color: var(--garnet);
+}
+
+header button:last-child:hover {
+    background-color: var(--garnet-dark);
+    color: var(--white);
+}
+
+/* ---------- PRICING SECTION ---------- */
+body > section:first-of-type {
+    padding: 70px 24px 90px;
+    text-align: center;
+    background-color: #e7e7e7;
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.78),
+            rgba(255, 255, 255, 0.78)
+        ),
+        url("images/pricing_background.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Your ride, Your budget */
+body > section:first-of-type > h1 {
+    font-size: 52px;
+    margin: 0;
+    line-height: 1.25;
+}
+
+body > section:first-of-type > h1:first-child {
     color: var(--charcoal);
 }
 
-/* Main heading */
-h1 {
+body > section:first-of-type > h1:nth-child(2) {
     color: var(--garnet);
-    font-size: 48px;
+    margin-bottom: 55px;
+}
+
+/* ---------- THREE PRICING CARDS ---------- */
+body > section:first-of-type {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 24px;
+}
+
+body > section:first-of-type > h1 {
+    flex: 0 0 100%;
+}
+
+body > section:first-of-type > div {
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - 48px) / 3);
+    max-width: 350px;
+    min-width: 0;
+    padding: 30px 24px;
+    border: 2px solid var(--garnet);
+    border-top: 6px solid var(--garnet);
+    border-radius: 18px;
+    background-color: var(--white);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s;
+}
+
+body > section:first-of-type > div:hover {
+    transform: translateY(-6px);
+}
+
+body > section:first-of-type > div h2 {
+    font-size: 25px;
+    color: var(--white);
+    background-color: var(--garnet);
+    padding: 12px;
+    margin: 0 0 20px;
+    border-radius: 30px;
+}
+
+body > section:first-of-type > div h3 {
+    font-size: 34px;
+    color: var(--charcoal);
+    margin: 0 0 25px;
+}
+
+body > section:first-of-type > div ul {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+body > section:first-of-type > div li {
+    position: relative;
+    padding: 12px 0 12px 25px;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 14px;
+}
+
+body > section:first-of-type > div li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--garnet);
+    font-weight: bold;
+}
+
+/* Highlight uGo Direct */
+body > section:first-of-type > div:nth-of-type(2) {
+    background-color: var(--garnet);
+    color: var(--white);
+    border-color: var(--garnet-dark);
+}
+
+body > section:first-of-type > div:nth-of-type(2) h2 {
+    background-color: var(--white);
+    color: var(--garnet);
+}
+
+body > section:first-of-type > div:nth-of-type(2) h3 {
+    color: var(--white);
+}
+
+body > section:first-of-type > div:nth-of-type(2) li::before {
+    color: var(--white);
+}
+
+/* ---------- DRIVER INTRODUCTION ---------- */
+body > section:nth-of-type(2) {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 90px 24px;
+    text-align: right;
+    position: relative;
+    min-height: 450px;
+}
+
+body > section:nth-of-type(2)::before {
+    content: "";
+    position: absolute;
+    left: 24px;
+    top: 70px;
+    width: 45%;
+    height: 330px;
+    background-image: url("images/driver_photo.png");
+    background-color: #dddddd;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+}
+
+body > section:nth-of-type(2) > h2,
+body > section:nth-of-type(2) > p,
+body > section:nth-of-type(2) > button {
+    position: relative;
+}
+
+body > section:nth-of-type(2) > h2,
+body > section:nth-of-type(2) > p {
+    width: 48%;
+    margin-left: auto;
+    text-align: left;
+}
+
+body > section:nth-of-type(2) > h2 {
+    font-size: 34px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+body > section:nth-of-type(2) > h2:nth-of-type(2) {
+    color: var(--garnet);
+    margin-bottom: 25px;
+}
+
+body > section:nth-of-type(2) > p {
+    margin-bottom: 30px;
+}
+
+body > section:nth-of-type(2) > button {
+    display: block;
+    margin-left: 52%;
+}
+
+/* ---------- DRIVER BENEFITS ---------- */
+body > section:nth-of-type(3) {
+    padding: 80px 24px;
+    background-color: var(--white);
+    text-align: center;
+}
+
+body > section:nth-of-type(3) > h2 {
+    font-size: 36px;
+    margin: 0 0 35px;
+}
+
+body > section:nth-of-type(3) > div:first-of-type {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+body > section:nth-of-type(3) ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+body > section:nth-of-type(3) li {
+    padding: 35px 20px;
+    border: 1px solid var(--garnet);
+    border-top: 5px solid var(--garnet);
+    border-radius: 12px;
+    background-color: var(--polar);
+    font-weight: bold;
+}
+
+body > section:nth-of-type(3) > div:last-of-type {
+    margin-top: 45px;
+}
+
+body > section:nth-of-type(3) > div:last-of-type p {
+    margin-bottom: 0;
+}
+
+body > section:nth-of-type(3) > div:last-of-type h2 {
+    color: var(--garnet);
+    font-size: 42px;
+    margin: 0;
+}
+
+/* ---------- REGISTRATION PROCESS ---------- */
+body > section:nth-of-type(4) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 80px 24px;
+    text-align: center;
+    background-color: var(--polar);
+}
+
+body > section:nth-of-type(4) > h2 {
+    flex: 0 0 100%;
+    font-size: 36px;
+    margin: 0 0 20px;
+}
+
+body > section:nth-of-type(4) > div {
+    width: calc((100% - 72px) / 4);
+    max-width: 260px;
+    padding: 28px 20px;
+    background-color: var(--white);
+    border: 1px solid #dddddd;
+    border-top: 5px solid var(--garnet);
+    border-radius: 12px;
+}
+
+body > section:nth-of-type(4) > div h3 {
+    color: var(--garnet);
+    font-size: 19px;
+}
+
+body > section:nth-of-type(4) > div p {
+    font-size: 14px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    padding: 25px 48px;
+    background-color: var(--charcoal);
+    color: var(--white);
+    border-radius: 16px 16px 0 0;
+}
+
+footer nav {
+    display: flex;
+    flex: 0 0 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #777777;
+}
+
+footer nav li {
+    list-style: none;
+}
+
+footer nav li:first-child {
+    margin-right: auto;
+}
+
+footer nav img {
+    height: 35px;
+    width: auto;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: var(--white);
+}
+
+footer nav a {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+footer a:hover {
+    color: #d4d4d4;
+}
+
+footer > small {
+    flex: 0 0 100%;
+    font-size: 13px;
+    text-align: right;
+}
+
+footer > section {
+    flex: 1 1 250px;
+    padding: 15px 0;
+}
+
+footer > section h2 {
+    font-size: 20px;
+    margin: 0 0 15px;
+}
+
+footer > section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer > section li {
+    margin-bottom: 8px;
+}
+
+footer > section a {
+    color: var(--white);
+    font-size: 14px;
+}
+
+footer > section:last-of-type {
+    flex: 0 0 100%;
+    text-align: center;
+    border-top: 1px solid #777777;
+}
+
+footer > section:last-of-type small {
+    font-size: 12px;
+}
+
+/* ---------- TABLETS ---------- */
+@media (max-width: 900px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    header ul {
+        width: 100%;
+    }
+
+    body > section:first-of-type > div {
+        width: calc(50% - 12px);
+    }
+
+    body > section:nth-of-type(4) > div {
+        width: calc(50% - 12px);
+        max-width: 400px;
+    }
+}
+
+/* ---------- PHONES ---------- */
+@media (max-width: 600px) {
+    header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    header li,
+    header li:first-child,
+    header li:last-child {
+        flex: 0 0 auto;
+        border: none;
+        padding: 0;
+    }
+
+    body > section:first-of-type > h1 {
+        font-size: 36px;
+    }
+
+    body > section:first-of-type > div {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    body > section:nth-of-type(2) {
+        padding: 40px 24px;
+    }
+
+    body > section:nth-of-type(2)::before {
+        position: relative;
+        display: block;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: 250px;
+        margin-bottom: 30px;
+    }
+
+    body > section:nth-of-type(2) > h2,
+    body > section:nth-of-type(2) > p {
+        width: 100%;
+    }
+
+    body > section:nth-of-type(2) > button {
+        margin-left: 0;
+    }
+
+    body > section:nth-of-type(3) ul {
+        grid-template-columns: 1fr;
+    }
+
+    body > section:nth-of-type(4) > div {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    footer {
+        padding: 25px 20px;
+    }
 }
