@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
  
 /* ---------- COLOURS ----------
-   Only the uGo colours from the style guide.
-   If we change a colour here, it changes on the whole page */
+   uGo colours */
 :root {
   --garnet: #8f001a;       /* Primary Garnet: important actions */
   --garnet-dark: #6b0014;  /* darker garnet for hover */
   --charcoal: #2d2d2c;     /* Charcoal Grey: text and footer */
   --polar: #f2f2f2;        /* Polar Grey: page background */
+  --polar-dark: #d4d4d4;   /* a darker polar grey: hover on the footer links */
   --white: #ffffff;
 }
  
@@ -33,7 +33,7 @@ hr {
   margin: 0;
 }
  
-/* no bullet points (also for the footer menu, where the li are not inside a ul) */
+/* no bullet points */
 ul {
   list-style: none;
   margin: 0;
@@ -46,7 +46,7 @@ li {
  
  
 /* ---------- TEXT ---------- */
-/* h1 is the biggest, then h2, then h3. Only bold and regular */
+/* h1 is the biggest, then h2, then h3 and only bold and regular */
 h1 {
   font-size: 40px;
   line-height: 1.2;
@@ -106,7 +106,7 @@ button {
   cursor: pointer;
 }
  
-/* Log In (first button): garnet background */
+/* first button (Log In): garnet background */
 header button:first-child {
   background-color: var(--garnet);
   color: var(--white);
@@ -145,15 +145,24 @@ header ul a {
   color: var(--garnet);
 }
  
+/* menu links: dark garnet when hovering */
+header ul a:hover {
+  color: var(--garnet-dark);
+}
+ 
 /* TEAM is the page we are on, so it is bold */
 header li:nth-child(4) a {
   font-weight: bold;
 }
  
-/* the language link */
 header li:last-child a {
   color: var(--charcoal);
   font-weight: bold;
+}
+ 
+/*garnet when hovering */
+header li:last-child a:hover {
+  color: var(--garnet);
 }
  
 header img {
@@ -190,7 +199,7 @@ main section:last-of-type h2::first-line {
 }
  
  
-/* ---------- HERO (first section) ---------- */
+/* ---------- HERO---------- */
 /* box where the group picture will go */
 main section:first-of-type p:last-of-type {
   display: flex;
@@ -205,7 +214,7 @@ main section:first-of-type p:last-of-type {
 }
  
  
-/* ---------- TEAM CARDS (second section) ---------- */
+/* ---------- TEAM CARDS---------- */
 /* the cards sit in rows and the last row is centred. phone: 1 per row */
 main section:nth-of-type(2) {
   display: flex;
@@ -233,10 +242,15 @@ article {
   transition: transform 0.2s;
 }
  
-/* hover: border gets darker and the card zooms in a bit */
+/* hover= border gets darker and the card zooms in a bit */
 article:hover {
   border-color: var(--garnet-dark);
   transform: scale(1.05);
+}
+ 
+/* hover= the initials circle gets darker too */
+article:hover p:first-child {
+  background-color: var(--garnet-dark);
 }
  
 article p {
@@ -257,22 +271,20 @@ article p:first-child {
   font-weight: bold;
 }
  
-/* name: the box is only as wide as the longest word,
-   so the first name and the last name sit on different lines */
+/* name */
 article h3 {
   width: min-content;
   margin: 0 auto 12px auto;
 }
  
-/* last card (Huges Franklin Kuete Yong): wide enough for "Huges Franklin"
-   but too narrow for 3 words, so it splits into 2 lines */
+/* wide enough for all names to fit into 2 lines */
 article:last-child h3 {
   width: 11em;
   max-width: 100%;
 }
  
  
-/* ---------- ABOUT THE TEAM (last section) ---------- */
+/* ---------- ABOUT THE TEAM---------- */
 /* small garnet label */
 main section:last-of-type p:first-child {
   display: inline-block;
@@ -292,15 +304,15 @@ main section:last-of-type img {
  
  
 /* ---------- FOOTER (small) ---------- */
-/* phone: 1 column */
+/* Same for the English and the French page */
 footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
   background-color: var(--charcoal);
   color: var(--white);
   padding: 20px 24px;
   border-radius: 16px 16px 0 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
 }
  
 footer a {
@@ -309,7 +321,7 @@ footer a {
 }
  
 footer a:hover {
-  color: var(--polar);
+  color: var(--polar-dark);
 }
  
 footer a:focus {
@@ -321,13 +333,23 @@ footer h2 {
   margin: 0 0 8px 0;
 }
  
-footer section {
-  padding: 0;
-}
- 
 footer li {
   margin-bottom: 4px;
   line-height: 1.5;
+}
+ 
+/* menu, phrase and copyright=full row */
+footer nav,
+footer > small,
+footer section:last-of-type {
+  flex: 0 0 100%;
+}
+ 
+/* the 2 link columns: each takes half of the row */
+footer section {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 0;
 }
  
 /* top menu: logo and links */
@@ -344,13 +366,12 @@ footer nav li {
   margin-bottom: 0;
 }
  
-/* logo on the left. the filter turns it white so it shows on the dark footer */
+/* logo on the left */
 footer nav li:first-child {
   margin-right: auto;
 }
  
-/* the logo keeps its own colours (red car).
-   it sits on a small white tile so it shows clearly on the dark footer */
+/* the logo with white background */
 footer nav img {
   display: block;
   height: 28px;
@@ -361,6 +382,7 @@ footer nav img {
   border-radius: 8px;
 }
  
+/* "Where will uGo?" */
 footer > small {
   font-size: 13px;
 }
@@ -394,7 +416,7 @@ footer section:last-of-type small {
     align-items: center;
   }
  
-  /* menu items spread out with a line between them */
+  /* menu is spread out with a line between them */
   header ul {
     flex: 1;
     gap: 0;
@@ -422,7 +444,7 @@ footer section:last-of-type small {
     padding: 80px 0;
   }
  
-  /* hero and about: text on the left, picture on the right */
+  /* text on the left, picture on the right */
   main section:first-of-type,
   main section:last-of-type {
     display: grid;
@@ -455,7 +477,7 @@ footer section:last-of-type small {
     justify-self: start;
   }
  
-  /* team cards: 2 per row */
+  /* team cards= 2 per row */
   main section:nth-of-type(2) {
     gap: 40px;
   }
@@ -468,16 +490,9 @@ footer section:last-of-type small {
     width: calc((100% - 40px) / 2);
   }
  
-  /* footer in 2 columns. menu, phrase and copyright take the full width */
+  /* footer: more space on the sides*/
   footer {
-    grid-template-columns: 1fr 1fr;
     padding: 20px 48px;
-  }
- 
-  footer nav,
-  footer > small,
-  footer section:last-of-type {
-    grid-column: 1 / 3;
   }
  
   footer > small {
@@ -487,7 +502,7 @@ footer section:last-of-type small {
  
 @media (min-width: 1024px) {
  
-  /* team cards: 3 per row, the last 2 are centred */
+  /* team cards= 3 per row with the last 2 are centred */
   article {
     width: calc((100% - 80px) / 3);
   }
