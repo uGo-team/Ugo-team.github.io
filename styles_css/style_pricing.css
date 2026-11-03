@@ -1,7 +1,7 @@
-body > section:nth-of-type(2)::before {
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* ---------- UGO COLOURS ---------- */
+/* ---------- COLOURS ---------- */
 :root {
     --garnet: #8f001a;
     --garnet-dark: #6b0014;
@@ -54,12 +54,6 @@ button:hover {
     background-color: var(--garnet-dark);
     border-color: var(--garnet-dark);
     color: var(--white);
-}
-
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--garnet);
-    outline-offset: 3px;
 }
 
 h1, h2, h3 {
@@ -146,8 +140,14 @@ header button:last-child:hover {
 
 /* ---------- PRICING SECTION ---------- */
 body > section:first-of-type {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 24px;
     padding: 70px 24px 90px;
     text-align: center;
+
     background-color: #e7e7e7;
     background-image:
         linear-gradient(
@@ -155,12 +155,14 @@ body > section:first-of-type {
             rgba(255, 255, 255, 0.78)
         ),
         url("images/pricing_background.png");
+
     background-size: cover;
     background-position: center;
 }
 
-/* Your ride, Your budget */
+/* Main headings */
 body > section:first-of-type > h1 {
+    flex: 0 0 100%;
     font-size: 52px;
     margin: 0;
     line-height: 1.25;
@@ -175,19 +177,7 @@ body > section:first-of-type > h1:nth-child(2) {
     margin-bottom: 55px;
 }
 
-/* ---------- THREE PRICING CARDS ---------- */
-body > section:first-of-type {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: flex-start;
-    gap: 24px;
-}
-
-body > section:first-of-type > h1 {
-    flex: 0 0 100%;
-}
-
+/* ---------- PRICING CARDS ---------- */
 body > section:first-of-type > div {
     display: flex;
     flex-direction: column;
@@ -195,9 +185,11 @@ body > section:first-of-type > div {
     max-width: 350px;
     min-width: 0;
     padding: 30px 24px;
+
     border: 2px solid var(--garnet);
     border-top: 6px solid var(--garnet);
     border-radius: 18px;
+
     background-color: var(--white);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
     transition: transform 0.2s;
@@ -244,7 +236,7 @@ body > section:first-of-type > div li::before {
     font-weight: bold;
 }
 
-/* Highlight uGo Direct */
+/* Middle pricing card */
 body > section:first-of-type > div:nth-of-type(2) {
     background-color: var(--garnet);
     color: var(--white);
@@ -266,14 +258,14 @@ body > section:first-of-type > div:nth-of-type(2) li::before {
 
 /* ---------- DRIVER INTRODUCTION ---------- */
 body > section:nth-of-type(2) {
+    position: relative;
     max-width: 1100px;
+    min-height: 470px;
     margin: 0 auto;
     padding: 90px 24px;
-    text-align: right;
-    position: relative;
-    min-height: 450px;
 }
 
+/* Driver image on the left */
 body > section:nth-of-type(2)::before {
     content: "";
     position: absolute;
@@ -281,17 +273,13 @@ body > section:nth-of-type(2)::before {
     top: 70px;
     width: 45%;
     height: 330px;
-    background-image: url("images/driver_photo.png");
+
     background-color: #dddddd;
+    background-image: url("images/driver_photo.png");
     background-size: cover;
     background-position: center;
-    border-radius: 16px;
-}
 
-body > section:nth-of-type(2) > h2,
-body > section:nth-of-type(2) > p,
-body > section:nth-of-type(2) > button {
-    position: relative;
+    border-radius: 16px;
 }
 
 body > section:nth-of-type(2) > h2,
@@ -370,7 +358,7 @@ body > section:nth-of-type(3) > div:last-of-type h2 {
     margin: 0;
 }
 
-/* ---------- REGISTRATION PROCESS ---------- */
+/* ---------- DRIVER REGISTRATION ---------- */
 body > section:nth-of-type(4) {
     display: flex;
     flex-wrap: wrap;
@@ -541,6 +529,7 @@ footer > section:last-of-type small {
 
     body > section:nth-of-type(2) {
         padding: 40px 24px;
+        min-height: 0;
     }
 
     body > section:nth-of-type(2)::before {
