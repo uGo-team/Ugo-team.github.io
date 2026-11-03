@@ -550,4 +550,33 @@ footer a:hover {
     footer {
         padding: 25px 20px;
     }
+/* ---------- WHITE BACKGROUNDS ---------- */
+
+body {
+    background-color: #ffffff;
+}
+
+.pricing-section {
+    background-color: #ffffff;
+}
+
+.driver-section {
+    background-color: #ffffff;
+}
+
+.benefits-section {
+    background-color: #ffffff;
+}
+
+.benefits-list li {
+    background-color: #ffffff;
+}
+
+.registration-section {
+    background-color: #ffffff;
+}
+
+.registration-steps .step {
+    background-color: #ffffff;
+}
 }
