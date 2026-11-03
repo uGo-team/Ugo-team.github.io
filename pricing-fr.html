@@ -1,197 +1,236 @@
+
 <!DOCTYPE html>
 <html lang="fr-CA">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>uGo - Tarifs</title>
+    <link rel="stylesheet" href="style_pricing.css">
 </head>
+
 <body>
 
-    <!--HEADER-->
+    <!-- HEADER -->
     <header>
-        <nav>
-            <ul style="list-style: none;">
-                <li><img src="images/uGo_icone.png" alt="Logo uGo"></li>
+        <nav class="nav-bar">
+            <ul class="nav-list">
+                <li class="nav-logo">
+                    <a href="home-fr.html">
+                        <img src="images/uGo_icone.png" alt="Logo uGo">
+                    </a>
+                </li>
                 <li><a href="home-fr.html">ACCUEIL</a></li>
                 <li><a href="features-fr.html">FONCTIONNALITÉS</a></li>
                 <li><a href="team-fr.html">ÉQUIPE</a></li>
-                <li><a href="pricing-fr.html">TARIFS</a></li>
+                <li><a href="pricing-fr.html" class="active">TARIFS</a></li>
                 <li><a href="pricing.html">ENGLISH</a></li>
             </ul>
 
-            <div style="text-align: end;">
-                <button>Connexion</button>
-                <button>Inscription</button>
+            <div class="nav-buttons">
+                <button type="button">Connexion</button>
+                <button type="button">Inscription</button>
             </div>
         </nav>
     </header>
 
+    <main>
 
-    <!--SECTION 1: Introduction aux tarifs-->
-    <section>
-        <h1>Votre trajet,</h1>
-        <h1>Votre budget.</h1>
+        <!-- SECTION 1 : Tarifs -->
+        <section class="pricing-section">
 
-        <!--À faire : CSS : ajouter une image de fond et styliser les tarifs-->
+            <h1>Votre trajet,<br><span>Votre budget.</span></h1>
 
-        <!--uGo Pool-->
-        <div>
-            <h2>uGo Pool</h2>
-            <h3>0,25 $/km</h3>
-            <ul>
-                <li>Véhicules plus spacieux</li>
-                <li>Voyagez avec vos amis</li>
-                <li>Partagez les frais</li>
-                <li>Plus de places et d'espace pour les bagages</li>
-                <li>Idéal pour les voyages entre provinces</li>
-            </ul>
-        </div>
+            <div class="pricing-cards">
 
-        <!--uGo Direct-->
-        <div>
-            <h2>uGo Direct</h2>
-            <h3>0,50 $/km</h3>
-            <ul>
-                <li>Trajet privé juste pour vous</li>
-                <li>Prise en charge et dépôt directs</li>
-                <li>Aucun arrêt pour d'autres passagers</li>
-                <li>Lieux de prise en charge flexibles</li>
-                <li>Idéal pour les trajets rapides et confortables</li>
-            </ul>
-        </div>
+                <!-- uGo Pool -->
+                <div class="pricing-card">
+                    <h2>uGo Pool</h2>
+                    <h3>0,25 $/km</h3>
 
-        <!--uGo Voyage-->
-        <div>
-            <h2>uGo Voyage</h2>
-            <h3>0,30 $/km</h3>
-            <ul>
-                <li>Véhicules plus spacieux</li>
-                <li>Voyagez avec vos amis</li>
-                <li>Partagez les frais</li>
-                <li>Plus de places et d'espace pour les bagages</li>
-                <li>Idéal pour les voyages entre provinces</li>
-            </ul>
-        </div>
-    </section>
-    <br>
+                    <ul>
+                        <li>Véhicules plus spacieux</li>
+                        <li>Voyagez avec vos amis</li>
+                        <li>Partagez les frais du trajet</li>
+                        <li>Plus de places et d'espace pour les bagages</li>
+                        <li>Idéal pour les déplacements entre provinces</li>
+                    </ul>
+                </div>
 
+                <!-- uGo Direct -->
+                <div class="pricing-card featured">
+                    <h2>uGo Direct</h2>
+                    <h3>0,50 $/km</h3>
 
-    <!--SECTION 2: Devenir conducteur uGo-->
-    <section>
-        <h2>Gagnez de l'argent selon votre horaire.</h2>
-        <h2>Faites une différence.</h2>
+                    <ul>
+                        <li>Un trajet privé rien que pour vous</li>
+                        <li>Prise en charge et arrivée directes</li>
+                        <li>Aucun arrêt pour d'autres passagers</li>
+                        <li>Lieux de prise en charge flexibles</li>
+                        <li>Idéal pour les trajets rapides et confortables</li>
+                    </ul>
+                </div>
 
-        <p>
-            Rejoignez notre réseau de conducteurs et
-            contribuez à faciliter les déplacements des
-            étudiants. Profitez d'horaires flexibles,
-            de possibilités de revenus compétitifs
-            et d'une communauté solidaire.
-        </p>
+                <!-- uGo Voyage -->
+                <div class="pricing-card">
+                    <h2>uGo Voyage</h2>
+                    <h3>0,30 $/km</h3>
 
-        <!--À faire : Ajouter le lien vers la page d'inscription-->
-        <button>Devenir conducteur &rarr;</button>
-    </section>
-    <br>
+                    <ul>
+                        <li>Véhicules plus spacieux</li>
+                        <li>Voyagez avec vos amis</li>
+                        <li>Partagez les frais du trajet</li>
+                        <li>Plus de places et d'espace pour les bagages</li>
+                        <li>Idéal pour les déplacements entre provinces</li>
+                    </ul>
+                </div>
 
+            </div>
+        </section>
 
-    <!--SECTION 3: Avantages et paiement-->
-    <section>
-        <!--À faire : CSS : ajouter une image et styliser les avantages-->
+        <!-- SECTION 2 : Devenir conducteur uGo -->
+        <section class="driver-section">
 
-        <h2>Pourquoi conduire avec uGo?</h2>
+            <div class="driver-image">
+                <img src="images/driver_photo.png"
+                     alt="Conducteur au volant d'une voiture">
+            </div>
 
-        <div>
-            <ul>
-                <li>Revenus compétitifs</li>
-                <li>Horaires flexibles</li>
-                <li>Soutenez votre communauté</li>
-            </ul>
-        </div>
+            <div class="driver-text">
+                <h2>Gagnez à votre rythme.<br>
+                    <span>Faites la différence.</span>
+                </h2>
 
-        <div style="text-align: center;">
-            <p>Paiement annuel de</p>
-            <h2>20 $/an</h2>
-        </div>
-    </section>
-    <br>
+                <p>
+                    Rejoignez notre réseau de conducteurs et
+                    aidez les étudiants à se déplacer.
+                    Profitez d'horaires flexibles, de revenus
+                    compétitifs et d'une communauté solidaire.
+                </p>
 
+                <!-- À faire : Ajouter le lien d'inscription -->
+                <button type="button">
+                    Devenir conducteur &rarr;
+                </button>
+            </div>
 
-    <!--SECTION 4: Processus d'inscription des conducteurs-->
-    <section>
-        <h2>Comment devenir conducteur uGo</h2>
+        </section>
 
-        <!--Étape 1-->
-        <div>
-            <h3>1. Faire une demande en ligne</h3>
-            <p>
-                Remplissez un court formulaire avec
-                vos renseignements de base.
-            </p>
-        </div>
+        <!-- SECTION 3 : Avantages des conducteurs -->
+        <section class="benefits-section">
 
-        <!--Étape 2-->
-        <div>
-            <h3>2. Vérification</h3>
-            <p>
-                Effectuez les vérifications requises
-                de vos antécédents et de vos documents.
-            </p>
-        </div>
+            <h2>Pourquoi conduire avec uGo ?</h2>
 
-        <!--Étape 3-->
-        <div>
-            <h3>3. Obtenir l'approbation</h3>
-            <p>
-                Une fois votre demande approuvée,
-                vous recevrez toutes les informations
-                nécessaires pour commencer à conduire.
-            </p>
-        </div>
+            <div class="benefits-list">
+                <ul>
+                    <li>Revenus compétitifs</li>
+                    <li>Horaires flexibles</li>
+                    <li>Soutenez votre communauté</li>
+                </ul>
+            </div>
 
-        <!--Étape 4-->
-        <div>
-            <h3>4. Commencer à gagner de l'argent</h3>
-            <p>
-                Connectez-vous, acceptez des demandes
-                de trajet et gagnez de l'argent
-                selon votre horaire.
-            </p>
-        </div>
-    </section>
-    <br>
+            <div class="driver-payment">
+                <p>Frais annuels de</p>
+                <h2>20 $/an</h2>
+            </div>
 
+        </section>
 
-    <!--FOOTER-->
+        <!-- SECTION 4 : Processus d'inscription -->
+        <section class="registration-section">
+
+            <h2>Comment devenir conducteur uGo ?</h2>
+
+            <div class="registration-steps">
+
+                <!-- Étape 1 -->
+                <div class="step">
+                    <h3>1. Inscription en ligne</h3>
+                    <p>
+                        Remplissez un court formulaire avec
+                        vos renseignements personnels.
+                    </p>
+                </div>
+
+                <!-- Étape 2 -->
+                <div class="step">
+                    <h3>2. Vérification</h3>
+                    <p>
+                        Effectuez les vérifications requises
+                        de vos antécédents et documents.
+                    </p>
+                </div>
+
+                <!-- Étape 3 -->
+                <div class="step">
+                    <h3>3. Approbation</h3>
+                    <p>
+                        Une fois votre demande approuvée,
+                        vous recevrez les informations
+                        nécessaires pour commencer.
+                    </p>
+                </div>
+
+                <!-- Étape 4 -->
+                <div class="step">
+                    <h3>4. Commencez à gagner</h3>
+                    <p>
+                        Connectez-vous, acceptez des demandes
+                        de trajet et gagnez à votre rythme.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-        <nav>
-             <li><img src="images/uGo_icone.png" alt="uGo icon"></li> <!--Put white logo (white, transparent background)-->
-             <li><a href="home-fr.html">Accueil</a></li>
-             <li><a href="features-fr.html">Fonctionnalités</a></li>
-             <li><a href="team-fr.html">Équipe</a></li>
-             <li><a href="pricing-fr.html">Tarifs</a></li>
+
+        <nav class="footer-nav">
+            <ul>
+                <li>
+                    <a href="home-fr.html">
+                        <img src="images/uGo_icone.png"
+                             alt="Logo uGo">
+                    </a>
+                </li>
+                <li><a href="home-fr.html">Accueil</a></li>
+                <li><a href="features-fr.html">Fonctionnalités</a></li>
+                <li><a href="team-fr.html">Équipe</a></li>
+                <li><a href="pricing-fr.html">Tarifs</a></li>
+            </ul>
         </nav>
 
-        <small style="text-align: end;"> Où iriez vous avec uGo? </small>
+        <small class="footer-slogan">Où irez-vous avec uGo ?</small>
 
-        <section>
+        <section class="footer-links">
             <h2>Fonctionnalités</h2>
-            <ul style="list-style: none;">
+            <ul>
                 <li><a href="features-fr.html">Réserver un trajet</a></li>
-                <li><a href="features-fr.html">Planifier un trajet pour plus tard</a></li>
+                <li><a href="features-fr.html">Planifier un trajet</a></li>
                 <li><a href="features-fr.html">Devenir conducteur uGo</a></li>
                 <li><a href="home-fr.html">Carte uGo</a></li>
             </ul>
         </section>
-        <section>
+
+        <section class="footer-links">
             <h2>Liens utiles</h2>
-            <ul style="list-style: none;">
+            <ul>
                 <li><a href="team-fr.html">À propos de nous</a></li>
-                <li><a href="help-fr.html">Centre d'aide</a></li> <!--#: Placeholder for help center page link -->
-                <li><a href="team-fr.html">Contactez-nous</a></li>
+                <li><a href="#">Centre d'aide</a></li>
+                <li><a href="team-fr.html">Nous contacter</a></li>
             </ul>
         </section>
-        <section>
-            <small>© Copyright 2026 All Rights Reserved • Terms and conditions</small>
+
+        <section class="footer-copyright">
+            <small>
+                © Copyright 2026 Tous droits réservés
+                • Conditions générales
+            </small>
         </section>
+
     </footer>
 
 </body>
