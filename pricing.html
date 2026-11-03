@@ -1,197 +1,234 @@
 
 <!DOCTYPE html>
 <html lang="en-CA">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>uGo - Pricing</title>
     <link rel="stylesheet" href="style_pricing.css">
 </head>
+
 <body>
 
-    <!--HEADER-->
+    <!-- HEADER -->
     <header>
-        <nav> <!-- MAKE SURE THAT THE LINKS TO THE PAGES ARE CORRECT!!!-->
-            <ul style="list-style: none;">
-                <li><img src="images/uGo_icone.png" alt="uGo icon"></li>
+        <nav class="nav-bar">
+            <ul class="nav-list">
+                <li class="nav-logo">
+                    <a href="home.html">
+                        <img src="images/uGo_icone.png" alt="uGo icon">
+                    </a>
+                </li>
                 <li><a href="home.html">HOME</a></li>
                 <li><a href="features.html">FEATURES</a></li>
                 <li><a href="team.html">TEAM</a></li>
-                <li><a href="pricing.html">PRICING</a></li>
+                <li><a href="pricing.html" class="active">PRICING</a></li>
                 <li><a href="pricing-fr.html">FRANÇAIS</a></li>
             </ul>
 
-            <div style="text-align: end;">
-                <button>Log In</button>
-                <button>Sign Up</button>
+            <div class="nav-buttons">
+                <button type="button">Log In</button>
+                <button type="button">Sign Up</button>
             </div>
         </nav>
     </header>
 
+    <main>
 
-    <!--SECTION 1: Introduction to Pricing-->
-    <section>
-        <h1>Your ride,</h1>
-        <h1>Your budget.</h1>
+        <!-- SECTION 1: Introduction to Pricing -->
+        <section class="pricing-section">
 
-        <!--To do: CSS: add background image and style pricing cards-->
+            <h1>Your ride,<br><span>Your budget.</span></h1>
 
-        <!--uGo Pool-->
-        <div>
-            <h2>uGo Pool</h2>
-            <h3>$0.25/km</h3>
-            <ul>
-                <li>Larger vehicles</li>
-                <li>Travel together with friends</li>
-                <li>Split the fare</li>
-                <li>Extra seating and luggage space</li>
-                <li>Ideal for Province traveling</li>
-            </ul>
-        </div>
+            <div class="pricing-cards">
 
-        <!--uGo Direct-->
-        <div>
-            <h2>uGo Direct</h2>
-            <h3>$0.50/km</h3>
-            <ul>
-                <li>Private ride just for you</li>
-                <li>Direct pickup and drop-off</li>
-                <li>No additional passenger stops</li>
-                <li>Flexible pickup locations</li>
-                <li>Ideal for quick, comfortable trips</li>
-            </ul>
-        </div>
+                <!-- uGo Pool -->
+                <div class="pricing-card">
+                    <h2>uGo Pool</h2>
+                    <h3>$0.25/km</h3>
 
-        <!--uGo Voyage-->
-        <div>
-            <h2>uGo Voyage</h2>
-            <h3>$0.30/km</h3>
-            <ul>
-                <li>Larger vehicles</li>
-                <li>Travel together with friends</li>
-                <li>Split the fare</li>
-                <li>Extra seating and luggage space</li>
-                <li>Ideal for Province traveling</li>
-            </ul>
-        </div>
-    </section>
-    <br>
+                    <ul>
+                        <li>Larger vehicles</li>
+                        <li>Travel together with friends</li>
+                        <li>Split the fare</li>
+                        <li>Extra seating and luggage space</li>
+                        <li>Ideal for Province traveling</li>
+                    </ul>
+                </div>
 
+                <!-- uGo Direct -->
+                <div class="pricing-card featured">
+                    <h2>uGo Direct</h2>
+                    <h3>$0.50/km</h3>
 
-    <!--SECTION 2: Become a uGo Driver-->
-    <section>
-        <h2>Earn on your schedule.</h2>
-        <h2>Make a difference.</h2>
+                    <ul>
+                        <li>Private ride just for you</li>
+                        <li>Direct pickup and drop-off</li>
+                        <li>No additional passenger stops</li>
+                        <li>Flexible pickup locations</li>
+                        <li>Ideal for quick, comfortable trips</li>
+                    </ul>
+                </div>
 
-        <p>
-            Join our network of drivers and help keep
-            students moving. Flexible hours, competitive
-            earning opportunities, and a supportive community.
-        </p>
+                <!-- uGo Voyage -->
+                <div class="pricing-card">
+                    <h2>uGo Voyage</h2>
+                    <h3>$0.30/km</h3>
 
-        <!--To do: Add link to driver registration page-->
-        <button>Join as a Driver &rarr;</button>
-    </section>
-    <br>
+                    <ul>
+                        <li>Larger vehicles</li>
+                        <li>Travel together with friends</li>
+                        <li>Split the fare</li>
+                        <li>Extra seating and luggage space</li>
+                        <li>Ideal for Province traveling</li>
+                    </ul>
+                </div>
 
+            </div>
+        </section>
 
-    <!--SECTION 3: Driver Benefits and Payment-->
-    <section>
-        <!--To do: CSS: add driver image and style benefits-->
+        <!-- SECTION 2: Become a uGo Driver -->
+        <section class="driver-section">
 
-        <h2>Why drive with uGo?</h2>
+            <div class="driver-image">
+                <img src="images/driver_photo.png"
+                     alt="Driver inside a car">
+            </div>
 
-        <div>
-            <ul>
-                <li>Competitive earnings</li>
-                <li>Flexible Hours</li>
-                <li>Support your community</li>
-            </ul>
-        </div>
+            <div class="driver-text">
+                <h2>Earn on your schedule.<br>
+                    <span>Make a difference.</span>
+                </h2>
 
-        <div style="text-align: center;">
-            <p>Annual payment of</p>
-            <h2>$20/year</h2>
-        </div>
-    </section>
-    <br>
+                <p>
+                    Join our network of drivers and help keep
+                    students moving. Flexible hours, competitive
+                    earning opportunities, and a supportive community.
+                </p>
 
+                <!-- To do: Add driver registration page link -->
+                <button type="button">
+                    Join as a Driver &rarr;
+                </button>
+            </div>
 
-    <!--SECTION 4: Driver Registration Process-->
-    <section>
-        <h2>How to become a uGo Driver</h2>
+        </section>
 
-        <!--Step 1-->
-        <div>
-            <h3>1. Apply Online</h3>
-            <p>
-                Fill out a short application with your
-                basic information.
-            </p>
-        </div>
+        <!-- SECTION 3: Driver Benefits and Payment -->
+        <section class="benefits-section">
 
-        <!--Step 2-->
-        <div>
-            <h3>2. Verification</h3>
-            <p>
-                Complete the required background and
-                document checks.
-            </p>
-        </div>
+            <h2>Why drive with uGo?</h2>
 
-        <!--Step 3-->
-        <div>
-            <h3>3. Get Approved</h3>
-            <p>
-                Once approved, you'll receive all the
-                information you need to start driving.
-            </p>
-        </div>
+            <div class="benefits-list">
+                <ul>
+                    <li>Competitive earnings</li>
+                    <li>Flexible Hours</li>
+                    <li>Support your community</li>
+                </ul>
+            </div>
 
-        <!--Step 4-->
-        <div>
-            <h3>4. Start Earning</h3>
-            <p>
-                Go online, accept ride requests,
-                and earn on your schedule.
-            </p>
-        </div>
-    </section>
-    <br>
+            <div class="driver-payment">
+                <p>Annual payment of</p>
+                <h2>$20/year</h2>
+            </div>
 
+        </section>
 
-    <!--FOOTER-->
+        <!-- SECTION 4: Driver Registration Process -->
+        <section class="registration-section">
+
+            <h2>How to become a uGo Driver</h2>
+
+            <div class="registration-steps">
+
+                <!-- Step 1 -->
+                <div class="step">
+                    <h3>1. Apply Online</h3>
+                    <p>
+                        Fill out a short application with your
+                        basic information.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step">
+                    <h3>2. Verification</h3>
+                    <p>
+                        Complete the required background and
+                        document checks.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step">
+                    <h3>3. Get Approved</h3>
+                    <p>
+                        Once approved, you'll receive all the
+                        information you need to start driving.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step">
+                    <h3>4. Start Earning</h3>
+                    <p>
+                        Go online, accept ride requests,
+                        and earn on your schedule.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-        <nav>
-             <li><img src="images/uGo_icone.png" alt="uGo icon"></li> <!--Put white logo (white, transparent background)-->
-             <li><a href="home.html">Home</a></li>
-             <li><a href="features.html">Features</a></li>
-             <li><a href="team.html">Team</a></li>
-             <li><a href="pricing.html">Pricing</a></li>
+
+        <nav class="footer-nav">
+            <ul>
+                <li>
+                    <a href="home.html">
+                        <img src="images/uGo_icone.png"
+                             alt="uGo icon">
+                    </a>
+                </li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+            </ul>
         </nav>
 
-        <small style="text-align: end;"> Where will uGo? </small>
+        <small class="footer-slogan">Where will uGo?</small>
 
-        <section>
+        <section class="footer-links">
             <h2>Features</h2>
-            <ul style="list-style: none;">
+            <ul>
                 <li><a href="features.html">Book a ride</a></li>
                 <li><a href="features.html">Plan a ride for later</a></li>
                 <li><a href="features.html">Become a uGo driver</a></li>
                 <li><a href="home.html">uGo map</a></li>
             </ul>
         </section>
-        <section>
+
+        <section class="footer-links">
             <h2>Useful links</h2>
-            <ul style="list-style: none;">
+            <ul>
                 <li><a href="team.html">About us</a></li>
-                <li><a href="#">Help Centre</a></li> <!--#: Placeholder for help center page link -->
+                <li><a href="#">Help Centre</a></li>
                 <li><a href="team.html">Contact us</a></li>
             </ul>
         </section>
-        <section>
-            <small>© Copyright 2026 All Rights Reserved • Terms and conditions</small>
+
+        <section class="footer-copyright">
+            <small>
+                © Copyright 2026 All Rights Reserved
+                • Terms and conditions
+            </small>
         </section>
+
     </footer>
 
 </body>
