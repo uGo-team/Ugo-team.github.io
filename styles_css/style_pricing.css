@@ -38,6 +38,12 @@ a:hover {
     color: var(--garnet);
 }
 
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--garnet);
+    outline-offset: 3px;
+}
+
 button {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
@@ -53,7 +59,6 @@ button {
 button:hover {
     background-color: var(--garnet-dark);
     border-color: var(--garnet-dark);
-    color: var(--white);
 }
 
 h1, h2, h3 {
@@ -66,14 +71,14 @@ header {
     padding: 20px 24px;
 }
 
-header nav {
+.nav-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
 }
 
-header ul {
+.nav-list {
     display: flex;
     align-items: center;
     flex: 1;
@@ -82,77 +87,73 @@ header ul {
     padding: 0;
 }
 
-header li {
+.nav-list li {
     flex: 1;
     text-align: center;
     border-right: 2px solid var(--charcoal);
 }
 
-header li:first-child,
-header li:last-child {
+.nav-list li:first-child,
+.nav-list li:last-child {
     flex: 0 0 auto;
     padding: 0 22px;
     border-right: none;
 }
 
-header img {
+.nav-logo img {
     height: 44px;
     width: auto;
+    max-width: none;
 }
 
-header a {
+.nav-list a {
     color: var(--garnet);
     font-weight: 500;
 }
 
-header a:hover {
+.nav-list a:hover {
     color: var(--garnet-dark);
 }
 
-header li:nth-child(5) a {
+.nav-list a.active {
     font-weight: bold;
 }
 
-header li:last-child a {
+.nav-list li:last-child a {
     color: var(--charcoal);
     font-weight: bold;
 }
 
-header nav > div {
+.nav-buttons {
     display: flex;
     gap: 12px;
     flex-shrink: 0;
 }
 
-header button {
+.nav-buttons button {
     padding: 10px 22px;
 }
 
-header button:last-child {
+.nav-buttons button:last-child {
     background-color: var(--white);
     color: var(--garnet);
 }
 
-header button:last-child:hover {
+.nav-buttons button:last-child:hover {
     background-color: var(--garnet-dark);
     color: var(--white);
 }
 
 /* ---------- PRICING SECTION ---------- */
-body > section:first-of-type {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: flex-start;
-    gap: 24px;
+.pricing-section {
     padding: 70px 24px 90px;
     text-align: center;
-
     background-color: #e7e7e7;
+
     background-image:
         linear-gradient(
-            rgba(255, 255, 255, 0.78),
-            rgba(255, 255, 255, 0.78)
+            rgba(255, 255, 255, 0.70),
+            rgba(255, 255, 255, 0.70)
         ),
         url("images/pricing_background.png");
 
@@ -160,28 +161,31 @@ body > section:first-of-type {
     background-position: center;
 }
 
-/* Main headings */
-body > section:first-of-type > h1 {
-    flex: 0 0 100%;
+.pricing-section h1 {
     font-size: 52px;
-    margin: 0;
-    line-height: 1.25;
-}
-
-body > section:first-of-type > h1:first-child {
+    margin: 0 0 55px;
     color: var(--charcoal);
 }
 
-body > section:first-of-type > h1:nth-child(2) {
+.pricing-section h1 span {
     color: var(--garnet);
-    margin-bottom: 55px;
 }
 
 /* ---------- PRICING CARDS ---------- */
-body > section:first-of-type > div {
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.pricing-card {
     display: flex;
     flex-direction: column;
-    width: calc((100% - 48px) / 3);
+    flex: 1 1 280px;
     max-width: 350px;
     min-width: 0;
     padding: 30px 24px;
@@ -195,11 +199,11 @@ body > section:first-of-type > div {
     transition: transform 0.2s;
 }
 
-body > section:first-of-type > div:hover {
+.pricing-card:hover {
     transform: translateY(-6px);
 }
 
-body > section:first-of-type > div h2 {
+.pricing-card h2 {
     font-size: 25px;
     color: var(--white);
     background-color: var(--garnet);
@@ -208,27 +212,26 @@ body > section:first-of-type > div h2 {
     border-radius: 30px;
 }
 
-body > section:first-of-type > div h3 {
+.pricing-card h3 {
     font-size: 34px;
-    color: var(--charcoal);
     margin: 0 0 25px;
 }
 
-body > section:first-of-type > div ul {
+.pricing-card ul {
     text-align: left;
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-body > section:first-of-type > div li {
+.pricing-card li {
     position: relative;
     padding: 12px 0 12px 25px;
     border-bottom: 1px solid #eeeeee;
     font-size: 14px;
 }
 
-body > section:first-of-type > div li::before {
+.pricing-card li::before {
     content: "✓";
     position: absolute;
     left: 0;
@@ -236,97 +239,78 @@ body > section:first-of-type > div li::before {
     font-weight: bold;
 }
 
-/* Middle pricing card */
-body > section:first-of-type > div:nth-of-type(2) {
+/* Highlight uGo Direct */
+.pricing-card.featured {
     background-color: var(--garnet);
     color: var(--white);
     border-color: var(--garnet-dark);
 }
 
-body > section:first-of-type > div:nth-of-type(2) h2 {
+.pricing-card.featured h2 {
     background-color: var(--white);
     color: var(--garnet);
 }
 
-body > section:first-of-type > div:nth-of-type(2) h3 {
-    color: var(--white);
-}
-
-body > section:first-of-type > div:nth-of-type(2) li::before {
+.pricing-card.featured li::before {
     color: var(--white);
 }
 
 /* ---------- DRIVER INTRODUCTION ---------- */
-body > section:nth-of-type(2) {
-    position: relative;
+.driver-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
     max-width: 1100px;
-    min-height: 470px;
     margin: 0 auto;
-    padding: 90px 24px;
+    padding: 80px 24px;
 }
 
-/* Driver image on the left */
-body > section:nth-of-type(2)::before {
-    content: "";
-    position: absolute;
-    left: 24px;
-    top: 70px;
-    width: 45%;
-    height: 330px;
+.driver-image {
+    width: 100%;
+}
 
-    background-color: #dddddd;
-    background-image: url("images/driver_photo.png");
-    background-size: cover;
-    background-position: center;
-
+.driver-image img {
+    display: block;
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    object-position: center;
     border-radius: 16px;
+    background-color: #dddddd;
 }
 
-body > section:nth-of-type(2) > h2,
-body > section:nth-of-type(2) > p {
-    width: 48%;
-    margin-left: auto;
-    text-align: left;
-}
-
-body > section:nth-of-type(2) > h2 {
+.driver-text h2 {
     font-size: 34px;
-    margin-top: 0;
-    margin-bottom: 5px;
+    margin: 0 0 25px;
 }
 
-body > section:nth-of-type(2) > h2:nth-of-type(2) {
+.driver-text h2 span {
     color: var(--garnet);
-    margin-bottom: 25px;
 }
 
-body > section:nth-of-type(2) > p {
+.driver-text p {
     margin-bottom: 30px;
 }
 
-body > section:nth-of-type(2) > button {
-    display: block;
-    margin-left: 52%;
-}
-
 /* ---------- DRIVER BENEFITS ---------- */
-body > section:nth-of-type(3) {
+.benefits-section {
     padding: 80px 24px;
     background-color: var(--white);
     text-align: center;
 }
 
-body > section:nth-of-type(3) > h2 {
+.benefits-section > h2 {
     font-size: 36px;
     margin: 0 0 35px;
 }
 
-body > section:nth-of-type(3) > div:first-of-type {
+.benefits-list {
     max-width: 1000px;
     margin: 0 auto;
 }
 
-body > section:nth-of-type(3) ul {
+.benefits-list ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
@@ -335,7 +319,7 @@ body > section:nth-of-type(3) ul {
     list-style: none;
 }
 
-body > section:nth-of-type(3) li {
+.benefits-list li {
     padding: 35px 20px;
     border: 1px solid var(--garnet);
     border-top: 5px solid var(--garnet);
@@ -344,39 +328,43 @@ body > section:nth-of-type(3) li {
     font-weight: bold;
 }
 
-body > section:nth-of-type(3) > div:last-of-type {
+.driver-payment {
     margin-top: 45px;
 }
 
-body > section:nth-of-type(3) > div:last-of-type p {
+.driver-payment p {
     margin-bottom: 0;
 }
 
-body > section:nth-of-type(3) > div:last-of-type h2 {
+.driver-payment h2 {
     color: var(--garnet);
     font-size: 42px;
     margin: 0;
 }
 
 /* ---------- DRIVER REGISTRATION ---------- */
-body > section:nth-of-type(4) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
+.registration-section {
     padding: 80px 24px;
     text-align: center;
     background-color: var(--polar);
 }
 
-body > section:nth-of-type(4) > h2 {
-    flex: 0 0 100%;
+.registration-section > h2 {
     font-size: 36px;
-    margin: 0 0 20px;
+    margin: 0 0 40px;
 }
 
-body > section:nth-of-type(4) > div {
-    width: calc((100% - 72px) / 4);
+.registration-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.step {
+    flex: 1 1 220px;
     max-width: 260px;
     padding: 28px 20px;
     background-color: var(--white);
@@ -385,12 +373,12 @@ body > section:nth-of-type(4) > div {
     border-radius: 12px;
 }
 
-body > section:nth-of-type(4) > div h3 {
+.step h3 {
     color: var(--garnet);
     font-size: 19px;
 }
 
-body > section:nth-of-type(4) > div p {
+.step p {
     font-size: 14px;
 }
 
@@ -405,25 +393,28 @@ footer {
     border-radius: 16px 16px 0 0;
 }
 
-footer nav {
-    display: flex;
+.footer-nav {
     flex: 0 0 100%;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid #777777;
 }
 
-footer nav li {
+.footer-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
     list-style: none;
 }
 
-footer nav li:first-child {
+.footer-nav li:first-child {
     margin-right: auto;
 }
 
-footer nav img {
+.footer-nav img {
+    display: block;
     height: 35px;
     width: auto;
     padding: 5px;
@@ -431,7 +422,7 @@ footer nav img {
     background-color: var(--white);
 }
 
-footer nav a {
+.footer-nav a {
     font-size: 13px;
     font-weight: bold;
     color: var(--white);
@@ -441,122 +432,117 @@ footer a:hover {
     color: #d4d4d4;
 }
 
-footer > small {
+.footer-slogan {
     flex: 0 0 100%;
     font-size: 13px;
     text-align: right;
 }
 
-footer > section {
+.footer-links {
     flex: 1 1 250px;
     padding: 15px 0;
 }
 
-footer > section h2 {
+.footer-links h2 {
     font-size: 20px;
     margin: 0 0 15px;
 }
 
-footer > section ul {
+.footer-links ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-footer > section li {
+.footer-links li {
     margin-bottom: 8px;
 }
 
-footer > section a {
+.footer-links a {
     color: var(--white);
     font-size: 14px;
 }
 
-footer > section:last-of-type {
+.footer-copyright {
     flex: 0 0 100%;
     text-align: center;
     border-top: 1px solid #777777;
+    padding-top: 15px;
 }
 
-footer > section:last-of-type small {
+.footer-copyright small {
     font-size: 12px;
 }
 
 /* ---------- TABLETS ---------- */
 @media (max-width: 900px) {
-    header nav {
+    .nav-bar {
         flex-direction: column;
     }
 
-    header ul {
+    .nav-list {
         width: 100%;
     }
 
-    body > section:first-of-type > div {
-        width: calc(50% - 12px);
+    .driver-section {
+        gap: 30px;
     }
 
-    body > section:nth-of-type(4) > div {
-        width: calc(50% - 12px);
-        max-width: 400px;
+    .driver-text h2 {
+        font-size: 28px;
     }
 }
 
 /* ---------- PHONES ---------- */
 @media (max-width: 600px) {
-    header ul {
+    .nav-list {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
     }
 
-    header li,
-    header li:first-child,
-    header li:last-child {
+    .nav-list li,
+    .nav-list li:first-child,
+    .nav-list li:last-child {
         flex: 0 0 auto;
         border: none;
         padding: 0;
     }
 
-    body > section:first-of-type > h1 {
+    .pricing-section h1 {
         font-size: 36px;
     }
 
-    body > section:first-of-type > div {
-        width: 100%;
+    .pricing-card {
+        flex-basis: 100%;
         max-width: 420px;
     }
 
-    body > section:nth-of-type(2) {
-        padding: 40px 24px;
-        min-height: 0;
+    .driver-section {
+        grid-template-columns: 1fr;
+        padding: 50px 24px;
     }
 
-    body > section:nth-of-type(2)::before {
-        position: relative;
-        display: block;
-        left: auto;
-        top: auto;
-        width: 100%;
-        height: 250px;
-        margin-bottom: 30px;
+    .driver-image img {
+        height: 260px;
     }
 
-    body > section:nth-of-type(2) > h2,
-    body > section:nth-of-type(2) > p {
-        width: 100%;
-    }
-
-    body > section:nth-of-type(2) > button {
-        margin-left: 0;
-    }
-
-    body > section:nth-of-type(3) ul {
+    .benefits-list ul {
         grid-template-columns: 1fr;
     }
 
-    body > section:nth-of-type(4) > div {
-        width: 100%;
+    .registration-section,
+    .benefits-section {
+        padding: 55px 24px;
+    }
+
+    .registration-section > h2,
+    .benefits-section > h2 {
+        font-size: 28px;
+    }
+
+    .step {
+        flex-basis: 100%;
         max-width: 420px;
     }
 
