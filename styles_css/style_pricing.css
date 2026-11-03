@@ -21,7 +21,7 @@ body {
     font-size: 16px;
     line-height: 1.7;
     color: var(--charcoal);
-    background-color: var(--polar);
+    background-color: var(--white);
 }
 
 img {
@@ -148,7 +148,7 @@ header {
 .pricing-section {
     padding: 70px 24px 90px;
     text-align: center;
-    background-color: #e7e7e7;
+    background-color: var(--white);
 
     background-image:
         linear-gradient(
@@ -264,6 +264,7 @@ header {
     max-width: 1100px;
     margin: 0 auto;
     padding: 80px 24px;
+    background-color: var(--white);
 }
 
 .driver-image {
@@ -277,7 +278,7 @@ header {
     object-fit: cover;
     object-position: center;
     border-radius: 16px;
-    background-color: #dddddd;
+    background-color: var(--white);
 }
 
 .driver-text h2 {
@@ -324,7 +325,7 @@ header {
     border: 1px solid var(--garnet);
     border-top: 5px solid var(--garnet);
     border-radius: 12px;
-    background-color: var(--polar);
+    background-color: var(--white);
     font-weight: bold;
 }
 
@@ -346,7 +347,7 @@ header {
 .registration-section {
     padding: 80px 24px;
     text-align: center;
-    background-color: var(--polar);
+    background-color: var(--white);
 }
 
 .registration-section > h2 {
