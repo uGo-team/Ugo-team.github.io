@@ -1,97 +1,110 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-.nav-bar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 10px 25px;
-    background-color: #ffffff;
+/* ---------- COLOURS ----------
+   uGo colours */
+:root {
+  --garnet: #8f001a;       /* Primary Garnet: important actions */
+  --garnet-dark: #6b0014;  /* darker garnet for hover */
+  --charcoal: #2d2d2c;     /* Charcoal Grey: text and footer */
+  --polar: #f2f2f2;        /* Polar Grey: page background */
+  --polar-dark: #d4d4d4;   /* a darker polar grey: hover on the footer links */
+  --white: #ffffff;
+}
+/* ---------- LINKS ---------- */
+/* no underline, garnet when hovering */
+a {
+  color: var(--charcoal);
+  text-decoration: none;
+}
+ 
+a:hover {
+  color: var(--garnet);
+}
+ 
+/* shows where we are when using the Tab key */
+a:focus,
+button:focus {
+  outline: 3px solid var(--garnet);
+  outline-offset: 2px;
+}
+/* ---------- BUTTONS ---------- */
+/* same size and same rounded corners everywhere */
+button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 28px;
+  border: 2px solid var(--garnet);
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--garnet);
+  cursor: pointer;
+}
+ 
+/* first button (Log In): garnet background */
+header button:first-child {
+  background-color: var(--garnet);
+  color: var(--white);
+}
+ 
+/* dark garnet when hovering */
+button:hover,
+header button:first-child:hover {
+  background-color: var(--garnet-dark);
+  border-color: var(--garnet-dark);
+  color: var(--white);
 }
 
-.nav-list{
-    display: flex;
-    align-items: center;
-    flex: 1;
-    list-style: none;
+/* ---------- HEADER ---------- */
+header {
+  background-color: var(--white);
+  padding: 20px 24px;
 }
-
-.nav-logo img{
-    height: 40px;
+ 
+/* phone: everything in one column */
+header nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-
-/* éléments du menu */
-.nav-list li{
-    flex: 1;
-    text-align: center;
-    position: relative;
+ 
+header ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 28px;
 }
-
-/* séparateurs */
-.nav-list li:not(.nav-logo):not(:last-child)::after{
-    content: "";
-    position: absolute;
-
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 2px;
-    height: 40px;
-    background: black;
+ 
+header ul a {
+  color: var(--garnet);
 }
-
-/* liens */
-.nav-list a{
-    text-decoration: none;
-    color: #8f001a;
-    font-size: 1.1rem;
-    font-weight: 500;
+ 
+/* menu links: dark garnet when hovering */
+header ul a:hover {
+  color: var(--garnet-dark);
 }
-
-.nav-list a.active{
-    font-weight: bold;
+ 
+/* TEAM is the page we are on, so it is bold */
+header li:nth-child(3) a {
+  font-weight: bold;
 }
-
-/* boutons */
-.nav-buttons{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    margin-left: 30px;
+ 
+header li:last-child a {
+  color: var(--charcoal);
+  font-weight: bold;
 }
-
-/* bouton Log In */
-.nav-buttons button:first-child{
-    background-color: #8f001a;
-    color: white;
-
-    border: 2px solid #333;
-    border-radius: 30px;
-
-    width: 100%;
-    height: 5%;
-
-    font-size: 90%;
-    font-weight: 600;
-
-    cursor: pointer;
+ 
+/*garnet when hovering */
+header li:last-child a:hover {
+  color: var(--garnet);
 }
-
-.nav-buttons button:last-child{
-    background-color: white;
-    color: #8f001a;
-
-    border: 2px solid #333;
-    border-radius: 30px;
-
-    width: 100%;
-    height: 5%;
-
-    font-size: 90%;
-    font-weight: 600;
-
-    cursor: pointer;
+ 
+header img {
+  height: 44px;
+}
+ 
+header nav div {
+  display: flex;
+  gap: 16px;
 }
 
 main details summary > div {
@@ -119,6 +132,7 @@ main details {
     transition: height 0.3s;
     height: 100px;
     min-height: 100px;
+    background-color: var(--white);
 }
 main details:hover {
     transform: scale(1.03);
@@ -133,179 +147,212 @@ main details summary{
 main details[open] {
     height: auto;
 }
-
-/* FOOTER */
-footer {
-    background-color: #24242e;
-    color: white;
-    border-radius: 30px 30px 0 0;
-    padding: 20px 25px 10px;
-    position: relative;
-    min-height: 300px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 45px 1fr auto;
-    column-gap: 15px;
+section h2{
+    font-size: 150%;
 }
 
-/* NAVIGATION DU HAUT */
+/* ---------- FOOTER (small) ---------- */
+/* Same for the English and the French page */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  background-color: var(--charcoal);
+  color: var(--white);
+  padding: 20px 24px;
+  border-radius: 16px 16px 0 0;
+}
+li {
+  list-style: none;
+}
+footer a {
+  color: var(--white);
+  font-size: 14px;
+}
+ 
+footer a:hover {
+  color: var(--polar-dark);
+}
+ 
+footer a:focus {
+  outline-color: var(--white);
+}
+ 
+footer h2 {
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+ 
+footer li {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+ 
+/* menu, phrase and copyright=full row */
+footer nav,
+footer > small,
+footer section:last-of-type {
+  flex: 0 0 100%;
+}
+ 
+/* the 2 link columns: each takes half of the row */
+footer section {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 0;
+}
+ 
+/* top menu: logo and links */
 footer nav {
-    grid-column: 1 / -1;
-    grid-row: 1;
-
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--polar);
+}
+ 
+footer nav li {
+  margin-bottom: 0;
+}
+ 
+/* logo on the left */
+footer nav li:first-child {
+  margin-right: auto;
+}
+ 
+/* the logo with white background */
+footer nav img {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: none;
+  padding: 6px 12px;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+ 
+/* "Where will uGo?" */
+footer > small {
+  font-size: 13px;
+}
+ 
+/* copyright at the bottom */
+footer section:last-of-type {
+  padding-top: 12px;
+  border-top: 1px solid var(--polar);
+}
+ 
+footer section:last-of-type small {
+  font-size: 12px;
+}
+ 
+    
+body {
+    margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--charcoal);
+  background-color: var(--polar);
+}
+/* ---------- COMPUTER SCREENS ---------- */
+@media (min-width: 768px) {
+ 
+  h1 {
+    font-size: 56px;
+  }
+ 
+  h2 {
+    font-size: 36px;
+  }
+ 
+  /* header in one row */
+  header nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+ 
+  /* menu is spread out with a line between them */
+  header ul {
+    flex: 1;
+    gap: 0;
+  }
+ 
+  header li {
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid var(--charcoal);
+  }
+ 
+  header li:first-child,
+  header li:last-child {
+    flex: 0 0 auto;
+    padding: 0 28px;
+    border-right: none;
+  }
+ 
+  header nav div {
+    margin-left: 24px;
+  }
+ 
+  main details summary > div {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    border-bottom: 2px solid #555560;
-    padding-bottom: 10px;
+    justify-content: center;
+    gap: 20px;
 }
-
-/* SUPPRIMER LES POINTS DES LISTES */
-footer nav li {
-    list-style: none;
-}
-
-/* LOGO TOUT À GAUCHE */
-footer nav li:first-child {
-    margin-right: auto;
-}
-
-footer nav img {
-    width: 60px;
+main details summary img {
+    width: 150px;
     height: auto;
-    display: block;
 }
-
-/* LIENS HOME, FEATURES, TEAM ET PRICING */
-footer nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: bold;
-    margin-left: 20px;
-}
-
-footer nav a:hover {
-    color: #b69cff;
-}
-
-/* PHRASE WHERE WILL UGO */
-footer > small {
-    position: absolute;
-    top: 12px;
-    right: 25px;
-    width: 100px;
-    text-align: center !important;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-/* COLONNES FEATURES ET USEFUL LINKS */
-footer section {
-    padding: 10px 0;
-}
-
-/* CENTRER LES DEUX COLONNES */
-footer section:nth-of-type(1) {
-    grid-column: 1;
-    grid-row: 2;
-    justify-self: center;
-}
-
-footer section:nth-of-type(2) {
-    grid-column: 2;
-    grid-row: 2;
-    justify-self: center;
-}
-
-/* TITRES FEATURES ET USEFUL LINKS */
-footer section h2 {
-    font-size: 22px;
-    margin-bottom: 18px;
-    color: white;
-}
-
-/* LISTES */
-footer section ul {
-    list-style: none;
-    padding: 0;
+main details summary h2 {
     margin: 0;
 }
-
-/* ESPACEMENT ENTRE LES LIENS */
-footer section li {
-    margin-bottom: 12px;
+main details {
+    width: 400px;
+    max-width: 100%;
+    margin: 15px auto;
+    border: 1px solid #333;
+    border-top: 5px solid #8f001a;
+    border-radius: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: height 0.3s;
+    height: 100px;
+    min-height: 100px;
+    background-color: var(--white);
 }
-
-/* LIENS DES COLONNES */
-footer section a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
+main details:hover {
+    transform: scale(1.03);
 }
-
-footer section a:hover {
-    color: #b69cff;
-}
-
-/* COPYRIGHT AU MILIEU */
-footer section:nth-of-type(3) {
-    grid-column: 1 / -1;
-    grid-row: 3;
-    padding: 15px 0 0;
-    text-align: center;
-}
-
-/* TEXTE DU COPYRIGHT EN GRIS */
-footer section:nth-of-type(3) small {
-    color: #a5a5b0;
-    font-size: 13px;
-    font-weight: normal;
-}
-
-/* PETITS ÉCRANS */
-@media (max-width: 600px) {
-    footer {
-        grid-template-columns: 1fr 1fr;
-        padding: 15px;
-    }
-
-    footer nav {
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    footer nav a {
-        font-size: 10px;
-        margin-left: 8px;
-    }
-
-    footer > small {
-        display: none;
-    }
-
-    footer section h2 {
-        font-size: 18px;
-    }
-
-    footer section a {
-        font-size: 12px;
-    }
-}
-footer nav li:first-child {
-    border-right: 2px solid #555560;
-    padding-right: 30px;
-    margin-right: auto;
-    height: 35px;
-
+main details summary{
+    padding: 8px 15px;
+    height: 100%;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
 }
-    width: 45px;
+main details[open] {
     height: auto;
 }
-body {
-    font-family: 'Poppins', sans-serif;
+ 
+ 
+  /* footer: more space on the sides*/
+  footer {
+    padding: 20px 48px;
+  }
+ 
+  footer > small {
+    text-align: right;
+  }
+}
+ 
+@media (min-width: 1024px) {
+ 
+  /* team cards= 3 per row with the last 2 are centred */
+  article {
+    width: calc((100% - 80px) / 3);
+  }
 }
