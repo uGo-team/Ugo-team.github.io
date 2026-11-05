@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* ---------- Colours the header uses ---------- */
+:root {
+  --garnet: #8f001a;       /* Primary Garnet: important actions */
+  --garnet-dark: #6b0014;  /* darker garnet for hover */
+  --charcoal: #2d2d2c;     /* Charcoal Grey: text and footer */
+  --polar: #f2f2f2;        /* Polar Grey: page background */
+  --polar-dark: #d4d4d4;   /* a darker polar grey: hover on the footer links */
+  --white: #ffffff;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--charcoal);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--charcoal);
+  text-decoration: none;
+}
+
+a:focus,
+button:focus {
+  outline: 3px solid var(--garnet);
+  outline-offset: 2px;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 28px;
+  border: 2px solid var(--garnet);
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--garnet);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--garnet-dark);
+  border-color: var(--garnet-dark);
+  color: var(--white);
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background-color: var(--white);
+  padding: 20px 24px;
+}
+
+/* phone: everything in one column */
+header nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+header ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 28px;
+}
+
+header ul a {
+  color: var(--garnet);
+}
+
+header ul a:hover {
+  color: var(--garnet-dark);
+}
+
+/* Log In button: garnet background */
+header button:first-child {
+  background-color: var(--garnet);
+  color: var(--white);
+}
+
+header button:first-child:hover {
+  background-color: var(--garnet-dark);
+  border-color: var(--garnet-dark);
+  color: var(--white);
+}
+
+/* current page = bold (4th item = TEAM) */
+header li:nth-child(4) a {
+  font-weight: bold;
+}
+
+/* FRANÇAIS (last item) */
+header li:last-child a {
+  color: var(--charcoal);
+  font-weight: bold;
+}
+
+header li:last-child a:hover {
+  color: var(--garnet);
+}
+
+header img {
+  height: 44px;
+}
+
+header nav div {
+  display: flex;
+  gap: 16px;
+}
+
+/* ---------- HEADER: computer screens ---------- */
+@media (min-width: 768px) {
+  header nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header ul {
+    flex: 1;
+    gap: 0;
+  }
+
+  header li {
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid var(--charcoal);
+  }
+
+  header li:first-child,
+  header li:last-child {
+    flex: 0 0 auto;
+    padding: 0 28px;
+    border-right: none;
+  }
+
+  header nav div {
+    margin-left: 24px;
+  }
+}
+
+/*--------------------------------------------------------------------------*/
+/*GLOBAL STYLES*/
+
+/*body{
+    font-family: Poppins, Arial, sans-serif;
+    line-height: 1;
+    letter-spacing: 0.5px;
+}*/
+
+.red-text{
+    color:#8f001a;
+}
+
+.black-text{
+    color:#2d2d2c;
+}
+
+.h2-subtitles{
+    color:#8f001a;
+    font-size: 30px;
+    margin-left: 270px;
+    margin-bottom: 70px;  
+}
+
+.section{ /*space between sections*/
+    margin: 100px auto;
+}
+
+/*--------------------------------------------------------------------------*/
+/*FOR SCROLL MENU*/
+.scroll-menu{
+    margin: 0 auto; /*To center the row*/
+    display: flex; /* flexbox used to make buttons be side by side */
+    gap: 16px;
+    overflow-x: auto; /* To scroll horizontally when it doesn't fit */
+    scroll-snap-type: x mandatory;
+    max-width: 800px; /*so there's an overflow*/
+    margin-top: 20px;
+}
+
+.btn-scroll-left{
+
+}
+
+.btn-scroll-right{
+
+}
+
+
+/*--------------------------------------------------------------------------*/
+/*SECTION 1: Introduction to uGo and main features*/
+#background-mainMenu{
+    background-color: #f2f2f2;
+    padding: 50px;
+    margin:50px auto;
+    border-radius: 40px;
+    border: 2px solid #8f001a;
+    box-shadow: 1px 1px 1px #2d2d2c;
+    max-width: 800px;
+}
+
+#h1-line1{
+    text-align: center;
+    color:#2d2d2c;
+    font-size: 40px;
+}
+
+#h1-line2{
+    text-align: center;
+    color:#2d2d2c;
+    font-size: 65px;
+    margin-bottom: 60px;
+}
+
+#h1-line3{
+    text-align: center;
+    color:#8f001a;
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+#btn-FindaRide{
+    display: inline-block;
+    background-color: #f2f2f2;
+    color: #8f001a;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid #8f001a;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-right: 10px; /* Add some space between the buttons */
+}
+
+#btn-OfferaRide{
+    display: inline-block;
+    background-color: #8f001a;
+    color: #f2f2f2;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid #2d2d2c;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    text-align: center; 
+}
+
+#btn-FindaRide:hover, #btn-FindaRide:active{
+    background-color: #8f001a;
+    color: #f2f2f2;
+}
+
+#btn-OfferaRide:hover, #btn-OfferaRide:active{
+    background-color: #f2f2f2;
+    color: #8f001a;
+}
+
+
+
+/*--------------------------------------------------------------------------*/
+/*SECTION 2: All features*/
+
+.feature-box{ /*for ALL image/button pairs*/
+    border: 2px solid #f2f2f2;
+    box-shadow: 2px 2px 2px #f2f2f2;
+    border-radius: 40px;
+    display: block; /* To center the image */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 200px;
+    height: 200px;
+    object-fit: contain; /* To make the image fit inside the box without stretching */
+}
+
+.feature-card{ /*for one image-button pair*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 calc((100% - 32px) / 3); /* To make 3 boxes fit in a row/scroll with 16px gap */
+}
+
+.btn-feature{
+    display: inline-block;
+    background-color: #f2f2f2;
+    color: #8f001a;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid #8f001a;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    text-align: center; 
+    margin-top:auto;
+}
+
+.btn-feature:hover, .btn-feature:active{
+    background-color: #8f001a;
+    color: #f2f2f2;
+}
+
+
+/*--------------------------------------------------------------------------*/
+/*SECTION 3: Current rides- Map from openstreetmap (open source)*/
+
+.map-section{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px; /*space between map and text*/
+    flex-wrap: wrap; /*For adaptability: to make map and text stack on top of each other on smaller screens */
+}
+
+.h2-side{
+    color:#8f001a;
+    font-size: 30px;
+    margin: 0;
+    flex: 0 0 220px;
+}
+
+.map-box iframe{
+    display: block;
+    border: 2px solid #8f001a;
+    border-radius: 40px;
+    box-shadow: 1px 1px 1px #2d2d2c;
+    margin-bottom: 10px;
+    width: 637.5px;
+    height: 525px;
+}
+
+
+/*--------------------------------------------------------------------------*/
+/*SECTION 4: Customer Reviews*/
+
+.review-box{
+    border: 2px solid #f2f2f2;
+    box-shadow: 1px 1px 1px #2d2d2c;
+    border-radius: 40px;
+    display: block; /* To center the review */
+    flex: 0 0 calc((100% - 32px) / 3); /* To make 3 boxes fit in a row/scroll with 16px gap */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 20px 20px 50px;
+    width: 50%;
+    box-sizing:border-box;
+    scroll-snap-align: start; /* To make the boxes snap to the left when scrolling */
+}
+
+
+/*--------------------------------------------------------------------------*/
+ /*FOOTER*/
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--charcoal);
+  background-color: var(--polar);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--charcoal);
+  text-decoration: none;
+}
+
+h2 {
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  background-color: var(--charcoal);
+  color: var(--white);
+  padding: 20px 24px;
+  border-radius: 16px 16px 0 0;
+}
+
+footer a {
+  color: var(--white);
+  font-size: 14px;
+}
+
+footer a:hover {
+  color: var(--polar-dark);
+}
+
+footer a:focus {
+  outline: 3px solid var(--white);
+  outline-offset: 2px;
+}
+
+footer h2 {
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+
+footer li {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+/* menu, phrase and copyright = full row */
+footer nav,
+footer > small,
+footer section:last-of-type {
+  flex: 0 0 100%;
+}
+
+/* the 2 link columns: each takes half of the row */
+footer section {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 0;
+}
+
+/* top menu: logo and links */
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--polar);
+}
+
+/* lets the menu items sit in one row inside the nav */
+footer nav ul {
+  display: contents;
+}
+
+footer nav li {
+  margin-bottom: 0;
+}
+
+/* logo on the left */
+footer nav li:first-child {
+  margin-right: auto;
+}
+
+/* logo with white background */
+footer nav img {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: none;
+  padding: 6px 12px;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+
+/* "Where will uGo?" */
+footer > small {
+  font-size: 13px;
+}
+
+/* copyright at the bottom */
+footer section:last-of-type {
+  padding-top: 12px;
+  border-top: 1px solid var(--polar);
+}
+
+footer section:last-of-type small {
+  font-size: 12px;
+}
+
+/* ---------- FOOTER: computer screens ---------- */
+@media (min-width: 768px) {
+  footer {
+    padding: 20px 48px;
+  }
+
+  footer > small {
+    text-align: right;
+  }
+}
