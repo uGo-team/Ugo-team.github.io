@@ -2,6 +2,7 @@
 <html lang="en-CA">
 <head>
     <title> uGo - Home </title>
+    <link rel="stylesheet" href="styles_css\style_home.css">
 </head>
 <body>
 
@@ -27,54 +28,53 @@
 
     <!--SECTION 1: Introduction to uGo and main features-->
     <section>
-        <!-- To do:CSS: add a background color/frame + style login/sign up buttons-->
-        <h1 style="text-align:center;font-size: 60px">Your campus. Your people. Your ride.</h1>
-        <h1 style="text-align:center;font-size: 70px">Wherever uGo.</h1>
-        <h1 style="text-align:center;font-size: 24px">Join the students and staff already sharing rides across the University of Ottawa</h1>
-
+        <div id="background-mainMenu">
+        <h1 id="h1-line1">Your campus. Your people. <span class="red-text">Your ride.</span></h1>
+        <h1 id="h1-line2">Wherever <span class="red-text">u</span>Go.</h1>
+        <h1 id="h1-line3">Join the students and staff already sharing rides across the University of Ottawa</h1>
         <div style="text-align:center;">
-            <a href="features.html" style="text-align:center;">Find a ride -></a> <!--link needs to be more precise - goes to the exact feature on feature page-->
-            <a href="features.html" style="text-align:center;">Offer a ride</a> <!--link needs to be more precise - goes to the exact feature on feature page-->
+            <a href="features.html" id="btn-FindaRide">Find a ride</a> <!--link needs to be more precise - goes to the exact feature on feature page-->
+            <a href="features.html" id="btn-OfferaRide">Offer a ride</a> <!--link needs to be more precise - goes to the exact feature on feature page-->
         </div>
     </section>
     <br>
     
 
     <!--SECTION 2: All features-->
-    <section>
-        <h2>Explore what you can do with uGo</h2>
+    <section class="section">
+        <h2 class="h2-subtitles">Explore what you can do with u<span class="black-text">Go</span></h2>
 
-        <!--To do: CSS: style feature buttons; JavaScript: add scroll functionality to the scroll buttons-->
-        <nav> <!--links need to be more precise - goes to the exact feature on feature page-->
-            <div>
-                <img src="images/images_features/find_a_ride.png" alt="find a ride" style="width: 200px;;height:auto;">
+        <!--To do: JavaScript: add scroll functionality to the scroll buttons-->
+        <nav class="scroll-menu"> <!--links need to be more precise - goes to the exact feature on feature page-->
+            <div class="feature-card">
+                <img class="feature-box" src="images/images_features/find_a_ride.png" alt="find a ride">
                 <br>
-                <a href="features.html">Find a ride</a>
+                <a href="features.html" class="btn-feature">Find a ride</a>
             </div>
-            <div>
-                <img src="images/images_features/post_a_ride.png" alt="post a ride" style="width: 200px;height: auto;">
+            <div class="feature-card">
+                <img class="feature-box" src="images/images_features/post_a_ride.png" alt="post a ride">
                 <br>
-                <a href="features.html">Offer a ride</a>
+                <a href="features.html" class="btn-feature">Offer a ride</a>
             </div>
-            <div>
-                <img src="images/images_features/plan_a_ride.png" alt="plan a ride" style="width: 200px;height: auto;">
+            <div class="feature-card">
+                <img class="feature-box" src="images/images_features/plan_a_ride.png" alt="plan a ride">
                 <br>
-                <a href="features.html">Plan a ride for later</a>
+                <a href="features.html" class="btn-feature">Plan a ride for later</a>
             </div>
-            <div>
-                <img src="images/images_features/chat_with_drivers.png" alt="chat with drivers" style="width: 200px;height: auto;">
+            <div class="feature-card">
+                <img class="feature-box" src="images/images_features/chat_with_drivers.png" alt="chat with drivers">
                 <br>
-                <a href="features.html">Chat with drivers</a>
+                <a href="features.html" class="btn-feature">Chat with drivers</a>
             </div>
-            <div>
-                <img src="images/images_features/rates_reviews.png" alt="ratings and reviews" style="width: 200px;height: auto;">
+            <div class="feature-card">
+                <img class="feature-box" src="images/images_features/rates_reviews.png" alt="ratings and reviews">
                 <br>
-                <a href="features.html">Ratings & Reviews</a>
+                <a href="features.html" class="btn-feature">Ratings & Reviews</a>
             </div>
-            <div>
-                <img src="images/images_features/meetup_points.png" alt="meetup points" style="width: 200px;height: auto;">
+            <div class="feature-card">
+                <img class="feature-box" src="images/images_features/meetup_points.png" alt="meetup points">
                 <br>
-                <a href="features.html">Meetup points</a>
+                <a href="features.html" class="btn-feature">Meetup points</a>
             </div>
         </nav>
 
@@ -87,56 +87,57 @@
 
 
     <!--SECTION 3: Current rides- Map from openstreetmap (open source)-->
-    <section>
-        <h2>Take a look at all the current rides</h2>
-        <iframe
-            width="637.5"
-            height="525"
-            src="https://www.openstreetmap.org/export/embed?bbox=-75.79313278198244%2C45.381572435128284%2C-75.57237625122072%2C45.4635018552525&amp;layer=mapnik&amp;marker=45.42255200704734%2C-75.68275451660156"
-            title="Map of available rides"
-        >
-        </iframe>
-        <br>
-        <small>
-            <a href="https://www.openstreetmap.org/?mlat=45.42255&amp;mlon=-75.68275#map=13/45.42255/-75.68275">View Larger Map</a>
-        </small>
+    <section class="map-section">
+        <h2 class="h2-side">Take a look at all the<span class="black-text"> current rides</span></h2>
+        
+        <div class="map-box">
+            <iframe
+                src="https://www.openstreetmap.org/export/embed?bbox=-75.79313278198244%2C45.381572435128284%2C-75.57237625122072%2C45.4635018552525&amp;layer=mapnik&amp;marker=45.42255200704734%2C-75.68275451660156"
+                title="Map of available rides"
+            >
+            </iframe>
+        </div>
+            <br>
+            <!--<small>
+                <a href="https://www.openstreetmap.org/?mlat=45.42255&amp;mlon=-75.68275#map=13/45.42255/-75.68275">View Larger Map</a>
+            </small>-->
     </section>
     <br>
 
     <!--SECTION 4: Customer Reviews-->
-    <section>
-        <h2>What our customers think of uGo...</h2>
+    <section class="section">
+        <h2 class="h2-subtitles">What our customers think of u<span class="black-text">Go</span>...</h2>
+        <nav class="scroll-menu">
+            <div class="review-box">
+                <h3>Customer 1</h3>
+                <p><i>Text box with review</i></p>
+            </div>
 
-        <div>
-            <h3>Customer 1</h3>
-            <p><i>Text box with review</i></p>
-        </div>
+            <div class="review-box">
+                <h3>Customer 2</h3>
+                <p><i>Text box with review</i></p>
+            </div>
 
-        <div>
-            <h3>Customer 2</h3>
-            <p><i>Text box with review</i></p>
-        </div>
+            <div class="review-box">
+                <h3>Customer 3</h3>
+                <p><i>Text box with review</i></p>
+            </div>
 
-        <div>
-            <h3>Customer 3</h3>
-            <p><i>Text box with review</i></p>
-        </div>
+            <div class="review-box">
+                <h3>Customer 4</h3>
+                <p><i>Text box with review</i></p>
+            </div>
 
-        <div>
-            <h3>Customer 4</h3>
-            <p><i>Text box with review</i></p>
-        </div>
+            <div class="review-box">
+                <h3>Customer 5</h3>
+                <p> <i>Text box with review</i></p>
+            </div>
 
-        <div>
-            <h3>Customer 5</h3>
-            <p> <i>Text box with review</i></p>
-        </div>
-
-        <div>
-            <h3>Customer 6</h3>
-            <p><i>Text box with review</i></p>
-        </div>
-
+            <div class="review-box">
+                <h3>Customer 6</h3>
+                <p><i>Text box with review</i></p>
+            </div>
+        </nav>
         <div style="text-align:center;">
             <button>Scroll left</button>
             <button>Scroll right</button>
