@@ -1,0 +1,509 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+ 
+/* ---------- COLOURS ----------
+   uGo colours */
+:root {
+  --garnet: #8f001a;       /* Primary Garnet: important actions */
+  --garnet-dark: #6b0014;  /* darker garnet for hover */
+  --charcoal: #2d2d2c;     /* Charcoal Grey: text and footer */
+  --polar: #f2f2f2;        /* Polar Grey: page background */
+  --polar-dark: #d4d4d4;   /* a darker polar grey: hover on the footer links */
+  --white: #ffffff;
+}
+ 
+ 
+/* ---------- WHOLE PAGE ---------- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--charcoal);
+  background-color: var(--polar);
+}
+ 
+img {
+  max-width: 100%;
+  height: auto;
+}
+ 
+hr {
+  border: 0;
+  border-top: 1px solid var(--charcoal);
+  margin: 0;
+}
+ 
+/* no bullet points */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ 
+li {
+  list-style: none;
+}
+ 
+ 
+/* ---------- TEXT ---------- */
+/* h1 is the biggest, then h2, then h3 and only bold and regular */
+h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: bold;
+  margin: 0 0 24px 0;
+}
+ 
+h2 {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: bold;
+  margin: 0 0 24px 0;
+}
+ 
+h3 {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+}
+ 
+p {
+  margin: 0 0 20px 0;
+}
+ 
+ 
+/* ---------- LINKS ---------- */
+/* no underline, garnet when hovering */
+a {
+  color: var(--charcoal);
+  text-decoration: none;
+}
+ 
+a:hover {
+  color: var(--garnet);
+}
+ 
+/* shows where we are when using the Tab key */
+a:focus,
+button:focus {
+  outline: 3px solid var(--garnet);
+  outline-offset: 2px;
+}
+ 
+ 
+/* ---------- BUTTONS ---------- */
+/* same size and same rounded corners everywhere */
+button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 28px;
+  border: 2px solid var(--garnet);
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--garnet);
+  cursor: pointer;
+}
+ 
+/* first button (Log In): garnet background */
+header button:first-child {
+  background-color: var(--garnet);
+  color: var(--white);
+}
+ 
+/* dark garnet when hovering */
+button:hover,
+header button:first-child:hover {
+  background-color: var(--garnet-dark);
+  border-color: var(--garnet-dark);
+  color: var(--white);
+}
+ 
+ 
+/* ---------- HEADER ---------- */
+header {
+  background-color: var(--white);
+  padding: 20px 24px;
+}
+ 
+/* phone: everything in one column */
+header nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+ 
+header ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 28px;
+}
+ 
+header ul a {
+  color: var(--garnet);
+}
+ 
+/* menu links: dark garnet when hovering */
+header ul a:hover {
+  color: var(--garnet-dark);
+}
+ 
+/* TEAM is the page we are on, so it is bold */
+header li:nth-child(4) a {
+  font-weight: bold;
+}
+ 
+header li:last-child a {
+  color: var(--charcoal);
+  font-weight: bold;
+}
+ 
+/*garnet when hovering */
+header li:last-child a:hover {
+  color: var(--garnet);
+}
+ 
+header img {
+  height: 44px;
+}
+ 
+header nav div {
+  display: flex;
+  gap: 16px;
+}
+ 
+ 
+/* ---------- MAIN ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+ 
+/* same padding on every section */
+section {
+  padding: 56px 0;
+}
+ 
+/* first line of the big titles is charcoal, the second line is garnet */
+h1,
+main section:last-of-type h2 {
+  color: var(--garnet);
+}
+ 
+h1::first-line,
+main section:last-of-type h2::first-line {
+  color: var(--charcoal);
+}
+ 
+ 
+/* ---------- HERO---------- */
+/* box where the group picture will go */
+main section:first-of-type p:last-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  margin-top: 32px;
+  border-radius: 16px;
+  background-color: var(--white);
+  font-weight: bold;
+  text-align: center;
+}
+ 
+ 
+/* ---------- TEAM CARDS---------- */
+/* the cards sit in rows and the last row is centred. phone: 1 per row */
+main section:nth-of-type(2) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+ 
+/* the title takes the whole row */
+main section:nth-of-type(2) h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+ 
+article {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--white);
+  border: 1px solid var(--garnet);
+  border-top: 5px solid var(--garnet);
+  border-radius: 8px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+ 
+/* hover= border gets darker and the card zooms in a bit */
+article:hover {
+  border-color: var(--garnet-dark);
+  transform: scale(1.05);
+}
+ 
+/* hover= the initials circle gets darker too */
+article:hover p:first-child {
+  background-color: var(--garnet-dark);
+}
+ 
+article p {
+  margin-bottom: 6px;
+}
+ 
+/* circle with the initials */
+article p:first-child {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--garnet);
+  color: var(--white);
+  font-weight: bold;
+}
+ 
+/* name */
+article h3 {
+  width: min-content;
+  margin: 0 auto 12px auto;
+}
+ 
+/* wide enough for all names to fit into 2 lines */
+article:last-child h3 {
+  width: 11em;
+  max-width: 100%;
+}
+ 
+ 
+/* ---------- ABOUT THE TEAM---------- */
+/* small garnet label */
+main section:last-of-type p:first-child {
+  display: inline-block;
+  padding: 4px 16px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  background-color: var(--garnet);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: bold;
+}
+ 
+main section:last-of-type img {
+  margin-top: 16px;
+  border-radius: 16px;
+}
+ 
+ 
+/* ---------- FOOTER (small) ---------- */
+/* Same for the English and the French page */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  background-color: var(--charcoal);
+  color: var(--white);
+  padding: 20px 24px;
+  border-radius: 16px 16px 0 0;
+}
+ 
+footer a {
+  color: var(--white);
+  font-size: 14px;
+}
+ 
+footer a:hover {
+  color: var(--polar-dark);
+}
+ 
+footer a:focus {
+  outline-color: var(--white);
+}
+ 
+footer h2 {
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+ 
+footer li {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+ 
+/* menu, phrase and copyright=full row */
+footer nav,
+footer > small,
+footer section:last-of-type {
+  flex: 0 0 100%;
+}
+ 
+/* the 2 link columns: each takes half of the row */
+footer section {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 0;
+}
+ 
+/* top menu: logo and links */
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--polar);
+}
+ 
+footer nav li {
+  margin-bottom: 0;
+}
+ 
+/* logo on the left */
+footer nav li:first-child {
+  margin-right: auto;
+}
+ 
+/* the logo with white background */
+footer nav img {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: none;
+  padding: 6px 12px;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+ 
+/* "Where will uGo?" */
+footer > small {
+  font-size: 13px;
+}
+ 
+/* copyright at the bottom */
+footer section:last-of-type {
+  padding-top: 12px;
+  border-top: 1px solid var(--polar);
+}
+ 
+footer section:last-of-type small {
+  font-size: 12px;
+}
+ 
+ 
+/* ---------- COMPUTER SCREENS ---------- */
+@media (min-width: 768px) {
+ 
+  h1 {
+    font-size: 56px;
+  }
+ 
+  h2 {
+    font-size: 36px;
+  }
+ 
+  /* header in one row */
+  header nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+ 
+  /* menu is spread out with a line between them */
+  header ul {
+    flex: 1;
+    gap: 0;
+  }
+ 
+  header li {
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid var(--charcoal);
+  }
+ 
+  header li:first-child,
+  header li:last-child {
+    flex: 0 0 auto;
+    padding: 0 28px;
+    border-right: none;
+  }
+ 
+  header nav div {
+    margin-left: 24px;
+  }
+ 
+  /* more space between sections */
+  section {
+    padding: 80px 0;
+  }
+ 
+  /* text on the left, picture on the right */
+  main section:first-of-type,
+  main section:last-of-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+    align-items: center;
+  }
+ 
+  main section:first-of-type h1,
+  main section:first-of-type p:first-of-type,
+  main section:last-of-type p,
+  main section:last-of-type h2 {
+    grid-column: 1;
+  }
+ 
+  main section:first-of-type p:last-of-type {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    min-height: 360px;
+    margin: 0;
+  }
+ 
+  main section:last-of-type img {
+    grid-column: 2;
+    grid-row: 1 / 5;
+    margin: 0;
+  }
+ 
+  main section:last-of-type p:first-child {
+    justify-self: start;
+  }
+ 
+  /* team cards= 2 per row */
+  main section:nth-of-type(2) {
+    gap: 40px;
+  }
+ 
+  main section:nth-of-type(2) h2 {
+    margin-bottom: 8px;
+  }
+ 
+  article {
+    width: calc((100% - 40px) / 2);
+  }
+ 
+  /* footer: more space on the sides*/
+  footer {
+    padding: 20px 48px;
+  }
+ 
+  footer > small {
+    text-align: right;
+  }
+}
+ 
+@media (min-width: 1024px) {
+ 
+  /* team cards= 3 per row with the last 2 are centred */
+  article {
+    width: calc((100% - 80px) / 3);
+  }
+}
