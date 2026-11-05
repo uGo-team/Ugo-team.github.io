@@ -187,31 +187,17 @@ main h1 span,
 }
 
 /* ---------- PRICING SECTION ---------- */
-/* Background image restored */
+/* Background image without a white overlay */
 .pricing-section {
-    position: relative;
     text-align: center;
-    isolation: isolate;
-}
 
-/* Image behind the title and pricing cards */
-.pricing-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-
-    background-image:
-        linear-gradient(
-            rgba(255, 255, 255, 0.70),
-            rgba(255, 255, 255, 0.70)
-        ),
-        url("images/pricing_background.png");
-
+    background-image: url("./images/pricing_background.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
     border-radius: 16px;
+    padding: 80px 24px;
 }
 
 .pricing-section h1 {
