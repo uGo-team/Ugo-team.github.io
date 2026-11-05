@@ -4,417 +4,556 @@
 /* ---------- COLOURS ---------- */
 
 :root {
-    --garnet: #8f001a;
-    --garnet-dark: #6b0014;
-    --charcoal: #2d2d2c;
-    --polar: #f2f2f2;
-    --polar-dark: #d4d4d4;
-    --white: #ffffff;
+  --garnet: #8f001a;
+  --garnet-dark: #6b0014;
+  --charcoal: #2d2d2c;
+  --polar: #f2f2f2;
+  --polar-dark: #d4d4d4;
+  --white: #ffffff;
 }
 
-/* ---------- GENERAL STYLING ---------- */
+/* ---------- WHOLE PAGE ---------- */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--charcoal);
-    background-color: var(--polar);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--charcoal);
+  background-color: var(--polar);
 }
 
 img {
-    max-width: 100%;
-}
-
-h1, h2, h3 {
-    line-height: 1.3;
-}
-
-a {
-    color: var(--garnet);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-button {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    background-color: var(--garnet);
-    color: var(--white);
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: var(--garnet-dark);
+  max-width: 100%;
+  height: auto;
 }
 
 hr {
-    border: none;
-    border-top: 1px solid var(--polar-dark);
-    margin: 0;
+  border: 0;
+  border-top: 1px solid var(--charcoal);
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* ---------- TEXT ---------- */
+
+h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: bold;
+  margin: 0 0 24px;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: bold;
+  margin: 0 0 24px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: bold;
+  margin: 0 0 12px;
+}
+
+p {
+  margin: 0 0 20px;
+}
+
+/* ---------- LINKS ---------- */
+
+a {
+  color: var(--charcoal);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--garnet);
+}
+
+a:focus,
+button:focus {
+  outline: 3px solid var(--garnet);
+  outline-offset: 2px;
+}
+
+/* ---------- BUTTONS ---------- */
+
+button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 28px;
+  border: 2px solid var(--garnet);
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--garnet);
+  cursor: pointer;
+}
+
+header button:first-child {
+  background-color: var(--garnet);
+  color: var(--white);
+}
+
+button:hover,
+header button:first-child:hover {
+  background-color: var(--garnet-dark);
+  border-color: var(--garnet-dark);
+  color: var(--white);
 }
 
 /* ---------- HEADER ---------- */
+/* Same styling as the Team page */
 
 header {
-    background-color: var(--white);
-    padding: 20px 24px;
+  background-color: var(--white);
+  padding: 20px 24px;
 }
 
 header nav {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+header ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 28px;
 }
 
-header nav li {
-    margin: 0;
+header ul a {
+  color: var(--garnet);
 }
 
-header nav img {
-    width: 44px;
-    display: block;
+header ul a:hover {
+  color: var(--garnet-dark);
 }
 
-header nav a {
-    color: var(--garnet);
-    font-size: 14px;
-    font-weight: bold;
+/* Pricing is the current page */
+
+header a.active {
+  font-weight: bold;
 }
 
-header nav a.active {
-    text-decoration: underline;
+header li:last-child a {
+  color: var(--charcoal);
+  font-weight: bold;
 }
 
-.header-buttons {
-    display: flex;
-    gap: 12px;
+header li:last-child a:hover {
+  color: var(--garnet);
+}
+
+header img {
+  height: 44px;
+}
+
+header nav div {
+  display: flex;
+  gap: 16px;
 }
 
 /* ---------- MAIN ---------- */
 
 main {
-    max-width: 1100px;
-    margin: auto;
-    padding: 0 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 main section {
-    padding-top: 56px;
-    padding-bottom: 56px;
+  padding: 56px 0;
 }
 
 /* ---------- PRICING TITLE ---------- */
+/* Title above the background image */
 
 .pricing-title {
-    text-align: center;
-    font-size: clamp(36px, 5vw, 58px);
-    color: var(--charcoal);
-    margin: 50px 0 30px;
+  text-align: center;
+  font-size: 40px;
+  color: var(--charcoal);
+  margin: 50px 0 30px;
 }
 
 .pricing-title span {
-    color: var(--garnet);
+  color: var(--garnet);
 }
 
 /* ---------- PRICING SECTION ---------- */
 
 .pricing-section {
-    text-align: center;
-    background-image: url("./images/pricing_background.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 16px;
-    padding: 60px 24px;
-    margin-top: 0;
+  text-align: center;
+  background-image: url("./images/pricing_background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  padding: 60px 24px;
+  margin-bottom: 30px;
 }
 
 .pricing-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
 }
 
 .pricing-card {
-    background-color: var(--white);
-    border: 1px solid var(--polar-dark);
-    border-top: 5px solid var(--garnet);
-    border-radius: 12px;
-    padding: 30px 22px;
-    text-align: left;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--white);
+  border: 1px solid var(--garnet);
+  border-top: 5px solid var(--garnet);
+  border-radius: 8px;
+  padding: 32px 24px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .pricing-card:hover {
-    transform: scale(1.03);
+  border-color: var(--garnet-dark);
+  transform: scale(1.05);
 }
 
 .pricing-card h2 {
-    color: var(--garnet);
-    font-size: 26px;
-    text-align: center;
-    margin: 0 0 10px;
+  color: var(--garnet);
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 16px;
 }
 
 .pricing-card h3 {
-    font-size: 28px;
-    text-align: center;
-    margin: 0 0 24px;
+  color: var(--charcoal);
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 32px;
 }
 
+/* Features without bullet points */
+
 .pricing-card ul {
-    padding-left: 22px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .pricing-card li {
-    margin-bottom: 12px;
+  list-style: none;
+  padding: 14px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--polar-dark);
+}
+
+.pricing-card li:last-child {
+  border-bottom: none;
 }
 
 /* ---------- DRIVER SECTION ---------- */
 
 .driver-section {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
 }
 
 .driver-image img {
-    width: 100%;
-    display: block;
-    border-radius: 16px;
+  width: 100%;
+  display: block;
+  border-radius: 16px;
 }
 
 .driver-text h2 {
-    font-size: clamp(28px, 4vw, 42px);
-    margin-top: 0;
+  font-size: 36px;
+  color: var(--charcoal);
 }
 
 .driver-text h2 span {
-    color: var(--garnet);
+  color: var(--garnet);
 }
 
 .driver-text p {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 /* ---------- BENEFITS SECTION ---------- */
 
 .benefits-section {
-    text-align: center;
+  text-align: center;
 }
 
 .benefits-section > h2 {
-    font-size: 36px;
-    margin-top: 0;
-    margin-bottom: 36px;
+  font-size: 36px;
+  margin-bottom: 36px;
 }
 
 .benefits-list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
 .benefits-list li {
-    background-color: var(--white);
-    border: 1px solid var(--polar-dark);
-    border-top: 4px solid var(--garnet);
-    border-radius: 10px;
-    padding: 25px 16px;
-    font-weight: bold;
+  background-color: var(--white);
+  border: 1px solid var(--garnet);
+  border-top: 5px solid var(--garnet);
+  border-radius: 8px;
+  padding: 25px 16px;
+  font-weight: bold;
 }
 
 .driver-payment {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .driver-payment p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .driver-payment h2 {
-    color: var(--garnet);
-    font-size: 38px;
-    margin-top: 5px;
+  color: var(--garnet);
+  font-size: 38px;
+  margin-top: 5px;
 }
 
 /* ---------- REGISTRATION SECTION ---------- */
 
 .registration-section {
-    text-align: center;
+  text-align: center;
 }
 
 .registration-section > h2 {
-    font-size: 36px;
-    margin-top: 0;
-    margin-bottom: 36px;
+  font-size: 36px;
+  margin-bottom: 36px;
 }
 
 .registration-steps {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
 .step {
-    background-color: var(--white);
-    border: 1px solid var(--polar-dark);
-    border-top: 4px solid var(--garnet);
-    border-radius: 10px;
-    padding: 24px 18px;
+  background-color: var(--white);
+  border: 1px solid var(--garnet);
+  border-top: 5px solid var(--garnet);
+  border-radius: 8px;
+  padding: 24px 18px;
 }
 
 .step h3 {
-    color: var(--garnet);
-    font-size: 19px;
+  color: var(--garnet);
+  font-size: 19px;
 }
 
 .step p {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 /* ---------- FOOTER ---------- */
+/* Same styling as the Team page */
 
 footer {
-    background-color: var(--charcoal);
-    color: var(--white);
-    padding: 50px 24px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-footer nav {
-    width: 100%;
-}
-
-footer nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-footer nav img {
-    width: 44px;
-    background-color: var(--white);
-    border-radius: 8px;
-    padding: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  background-color: var(--charcoal);
+  color: var(--white);
+  padding: 20px 24px;
+  border-radius: 16px 16px 0 0;
 }
 
 footer a {
-    color: var(--white);
+  color: var(--white);
+  font-size: 14px;
 }
 
-footer small {
-    width: 100%;
-    text-align: right;
+footer a:hover {
+  color: var(--polar-dark);
+}
+
+footer a:focus {
+  outline-color: var(--white);
+}
+
+footer h2 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+footer li {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+footer nav,
+footer > small,
+footer section:last-of-type {
+  flex: 0 0 100%;
 }
 
 footer section {
-    flex: 1 1 200px;
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 0;
 }
 
-footer section h2 {
-    font-size: 18px;
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--polar);
 }
 
-footer section ul {
-    list-style: none;
-    padding: 0;
+footer nav ul {
+  display: contents;
 }
 
-footer section li {
-    margin-bottom: 10px;
+footer nav li {
+  margin-bottom: 0;
 }
 
-footer section p {
-    font-size: 13px;
+footer nav li:first-child {
+  margin-right: auto;
 }
 
-/* ---------- RESPONSIVE DESIGN ---------- */
-
-@media (min-width: 700px) {
-
-    main section {
-        padding-top: 80px;
-        padding-bottom: 80px;
-    }
-
-    .driver-section {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .benefits-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .registration-steps {
-        grid-template-columns: repeat(2, 1fr);
-    }
+footer nav img {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: none;
+  padding: 6px 12px;
+  background-color: var(--white);
+  border-radius: 8px;
 }
+
+footer > small {
+  font-size: 13px;
+}
+
+footer section:last-of-type {
+  padding-top: 12px;
+  border-top: 1px solid var(--polar);
+}
+
+footer section:last-of-type small {
+  font-size: 12px;
+}
+
+/* ---------- COMPUTER SCREENS ---------- */
+
+@media (min-width: 768px) {
+
+  h1 {
+    font-size: 56px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  /* Header in one row */
+
+  header nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header ul {
+    flex: 1;
+    gap: 0;
+  }
+
+  header li {
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid var(--charcoal);
+  }
+
+  header li:first-child,
+  header li:last-child {
+    flex: 0 0 auto;
+    padding: 0 28px;
+    border-right: none;
+  }
+
+  header nav div {
+    margin-left: 24px;
+  }
+
+  main section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .pricing-title {
+    font-size: 56px;
+  }
+
+  .driver-section {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+  }
+
+  .benefits-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .registration-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer {
+    padding: 20px 48px;
+  }
+
+  footer > small {
+    text-align: right;
+  }
+}
+
+/* ---------- LARGE SCREENS ---------- */
 
 @media (min-width: 1024px) {
 
-    .pricing-cards {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .pricing-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 
-    .registration-steps {
-        grid-template-columns: repeat(4, 1fr);
-    }
+  .registration-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-@media (max-width: 600px) {
+/* ---------- SMALL SCREENS ---------- */
 
-    header nav {
-        justify-content: center;
-    }
+@media (max-width: 767px) {
 
-    header nav ul {
-        justify-content: center;
-    }
+  .pricing-section {
+    padding: 50px 16px;
+  }
 
-    .pricing-section {
-        padding: 50px 16px;
-    }
-
-    footer {
-        flex-direction: column;
-    }
+  .pricing-title {
+    margin-top: 36px;
+  }
 }
