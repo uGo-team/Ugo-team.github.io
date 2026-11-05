@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 /* ---------- COLOURS ---------- */
 :root {
@@ -7,6 +7,7 @@
     --garnet-dark: #6b0014;
     --charcoal: #2d2d2c;
     --polar: #f2f2f2;
+    --polar-dark: #d4d4d4;
     --white: #ffffff;
 }
 
@@ -21,7 +22,7 @@ body {
     font-size: 16px;
     line-height: 1.7;
     color: var(--charcoal);
-    background-color: var(--white);
+    background-color: var(--polar);
 }
 
 img {
@@ -29,8 +30,51 @@ img {
     height: auto;
 }
 
+hr {
+    border: 0;
+    border-top: 1px solid var(--charcoal);
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* ---------- TEXT ---------- */
+h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: bold;
+    margin: 0 0 24px;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: bold;
+    margin: 0 0 24px;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: bold;
+    margin: 0 0 12px;
+}
+
+p {
+    margin: 0 0 20px;
+}
+
+/* ---------- LINKS ---------- */
 a {
-    color: inherit;
+    color: var(--charcoal);
     text-decoration: none;
 }
 
@@ -38,12 +82,13 @@ a:hover {
     color: var(--garnet);
 }
 
-a:focus-visible,
-button:focus-visible {
+a:focus,
+button:focus {
     outline: 3px solid var(--garnet);
-    outline-offset: 3px;
+    outline-offset: 2px;
 }
 
+/* ---------- BUTTONS ---------- */
 button {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
@@ -51,18 +96,22 @@ button {
     padding: 12px 28px;
     border: 2px solid var(--garnet);
     border-radius: 8px;
+    background-color: var(--white);
+    color: var(--garnet);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+header button:first-child {
     background-color: var(--garnet);
     color: var(--white);
-    cursor: pointer;
 }
 
-button:hover {
+button:hover,
+header button:first-child:hover {
     background-color: var(--garnet-dark);
     border-color: var(--garnet-dark);
-}
-
-h1, h2, h3 {
-    line-height: 1.3;
+    color: var(--white);
 }
 
 /* ---------- HEADER ---------- */
@@ -71,316 +120,225 @@ header {
     padding: 20px 24px;
 }
 
-.nav-bar {
+header nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.nav-list {
+header ul {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    flex: 1;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    gap: 12px 28px;
 }
 
-.nav-list li {
-    flex: 1;
-    text-align: center;
-    border-right: 2px solid var(--charcoal);
-}
-
-.nav-list li:first-child,
-.nav-list li:last-child {
-    flex: 0 0 auto;
-    padding: 0 22px;
-    border-right: none;
-}
-
-.nav-logo img {
-    height: 44px;
-    width: auto;
-    max-width: none;
-}
-
-.nav-list a {
+header ul a {
     color: var(--garnet);
-    font-weight: 500;
 }
 
-.nav-list a:hover {
+header ul a:hover {
     color: var(--garnet-dark);
 }
 
-.nav-list a.active {
+/* PRICING is the active page */
+header a.active {
     font-weight: bold;
 }
 
-.nav-list li:last-child a {
+header li:last-child a {
     color: var(--charcoal);
     font-weight: bold;
 }
 
-.nav-buttons {
-    display: flex;
-    gap: 12px;
-    flex-shrink: 0;
-}
-
-.nav-buttons button {
-    padding: 10px 22px;
-}
-
-.nav-buttons button:last-child {
-    background-color: var(--white);
+header li:last-child a:hover {
     color: var(--garnet);
 }
 
-.nav-buttons button:last-child:hover {
-    background-color: var(--garnet-dark);
-    color: var(--white);
+header img {
+    height: 44px;
+    width: auto;
+}
+
+header nav div {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* ---------- MAIN ---------- */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+main section {
+    padding: 56px 0;
+}
+
+main h1 {
+    color: var(--charcoal);
+}
+
+main h1 span,
+.driver-text h2 span {
+    color: var(--garnet);
 }
 
 /* ---------- PRICING SECTION ---------- */
 .pricing-section {
-    padding: 70px 24px 90px;
     text-align: center;
-    background-color: var(--white);
-
-    background-image:
-        linear-gradient(
-            rgba(255, 255, 255, 0.70),
-            rgba(255, 255, 255, 0.70)
-        ),
-        url("images/pricing_background.png");
-
-    background-size: cover;
-    background-position: center;
 }
 
 .pricing-section h1 {
-    font-size: 52px;
-    margin: 0 0 55px;
-    color: var(--charcoal);
+    margin-bottom: 48px;
 }
 
-.pricing-section h1 span {
-    color: var(--garnet);
-}
-
-/* ---------- PRICING CARDS ---------- */
 .pricing-cards {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
-    gap: 24px;
-    max-width: 1100px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
 }
 
 .pricing-card {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 280px;
-    max-width: 350px;
-    min-width: 0;
-    padding: 30px 24px;
-
-    border: 2px solid var(--garnet);
-    border-top: 6px solid var(--garnet);
-    border-radius: 18px;
-
     background-color: var(--white);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    transition: transform 0.2s;
+    border: 1px solid var(--garnet);
+    border-top: 5px solid var(--garnet);
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
 }
 
 .pricing-card:hover {
-    transform: translateY(-6px);
+    border-color: var(--garnet-dark);
+    transform: scale(1.03);
 }
 
 .pricing-card h2 {
-    font-size: 25px;
-    color: var(--white);
-    background-color: var(--garnet);
-    padding: 12px;
-    margin: 0 0 20px;
-    border-radius: 30px;
+    color: var(--garnet);
+    margin-bottom: 16px;
 }
 
 .pricing-card h3 {
-    font-size: 34px;
-    margin: 0 0 25px;
+    font-size: 28px;
+    color: var(--charcoal);
+    margin-bottom: 24px;
 }
 
 .pricing-card ul {
     text-align: left;
-    padding: 0;
-    margin: 0;
-    list-style: none;
 }
 
 .pricing-card li {
-    position: relative;
-    padding: 12px 0 12px 25px;
-    border-bottom: 1px solid #eeeeee;
-    font-size: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--polar-dark);
 }
 
-.pricing-card li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--garnet);
-    font-weight: bold;
+.pricing-card li:last-child {
+    border-bottom: none;
 }
 
-/* Highlight uGo Direct */
-.pricing-card.featured {
-    background-color: var(--garnet);
-    color: var(--white);
-    border-color: var(--garnet-dark);
-}
-
-.pricing-card.featured h2 {
-    background-color: var(--white);
-    color: var(--garnet);
-}
-
-.pricing-card.featured li::before {
-    color: var(--white);
-}
-
-/* ---------- DRIVER INTRODUCTION ---------- */
+/* ---------- DRIVER SECTION ---------- */
 .driver-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 40px;
     align-items: center;
-    gap: 60px;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 80px 24px;
-    background-color: var(--white);
-}
-
-.driver-image {
-    width: 100%;
 }
 
 .driver-image img {
     display: block;
     width: 100%;
-    height: 340px;
-    object-fit: cover;
-    object-position: center;
     border-radius: 16px;
-    background-color: var(--white);
 }
 
 .driver-text h2 {
-    font-size: 34px;
-    margin: 0 0 25px;
-}
-
-.driver-text h2 span {
-    color: var(--garnet);
+    color: var(--charcoal);
 }
 
 .driver-text p {
-    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.driver-text button {
+    background-color: var(--garnet);
+    color: var(--white);
 }
 
 /* ---------- DRIVER BENEFITS ---------- */
 .benefits-section {
-    padding: 80px 24px;
-    background-color: var(--white);
     text-align: center;
 }
 
-.benefits-section > h2 {
-    font-size: 36px;
-    margin: 0 0 35px;
+.benefits-section h2 {
+    margin-bottom: 32px;
 }
 
 .benefits-list {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.benefits-list ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 24px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
 }
 
 .benefits-list li {
-    padding: 35px 20px;
+    padding: 24px;
+    background-color: var(--white);
     border: 1px solid var(--garnet);
     border-top: 5px solid var(--garnet);
-    border-radius: 12px;
-    background-color: var(--white);
+    border-radius: 8px;
     font-weight: bold;
 }
 
 .driver-payment {
-    margin-top: 45px;
+    margin-top: 48px;
 }
 
 .driver-payment p {
-    margin-bottom: 0;
+    margin-bottom: 8px;
 }
 
 .driver-payment h2 {
     color: var(--garnet);
-    font-size: 42px;
-    margin: 0;
-}
-
-/* ---------- DRIVER REGISTRATION ---------- */
-.registration-section {
-    padding: 80px 24px;
-    text-align: center;
-    background-color: var(--white);
-}
-
-.registration-section > h2 {
     font-size: 36px;
-    margin: 0 0 40px;
+}
+
+/* ---------- REGISTRATION SECTION ---------- */
+.registration-section {
+    text-align: center;
+}
+
+.registration-section h2 {
+    margin-bottom: 40px;
 }
 
 .registration-steps {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 24px;
-    max-width: 1100px;
-    margin: 0 auto;
 }
 
 .step {
-    flex: 1 1 220px;
-    max-width: 260px;
-    padding: 28px 20px;
     background-color: var(--white);
-    border: 1px solid #dddddd;
+    border: 1px solid var(--garnet);
     border-top: 5px solid var(--garnet);
-    border-radius: 12px;
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.step:hover {
+    transform: scale(1.03);
 }
 
 .step h3 {
     color: var(--garnet);
-    font-size: 19px;
 }
 
 .step p {
-    font-size: 14px;
+    margin-bottom: 0;
 }
 
 /* ---------- FOOTER ---------- */
@@ -388,195 +346,157 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 12px 24px;
-    padding: 25px 48px;
     background-color: var(--charcoal);
     color: var(--white);
+    padding: 20px 24px;
     border-radius: 16px 16px 0 0;
 }
 
-.footer-nav {
-    flex: 0 0 100%;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #777777;
-}
-
-.footer-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.footer-nav li:first-child {
-    margin-right: auto;
-}
-
-.footer-nav img {
-    display: block;
-    height: 35px;
-    width: auto;
-    padding: 5px;
-    border-radius: 6px;
-    background-color: var(--white);
-}
-
-.footer-nav a {
-    font-size: 13px;
-    font-weight: bold;
-    color: var(--white);
-}
-
-footer a:hover {
-    color: #d4d4d4;
-}
-
-.footer-slogan {
-    flex: 0 0 100%;
-    font-size: 13px;
-    text-align: right;
-}
-
-.footer-links {
-    flex: 1 1 250px;
-    padding: 15px 0;
-}
-
-.footer-links h2 {
-    font-size: 20px;
-    margin: 0 0 15px;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links li {
-    margin-bottom: 8px;
-}
-
-.footer-links a {
+footer a {
     color: var(--white);
     font-size: 14px;
 }
 
-.footer-copyright {
-    flex: 0 0 100%;
-    text-align: center;
-    border-top: 1px solid #777777;
-    padding-top: 15px;
+footer a:hover {
+    color: var(--polar-dark);
 }
 
-.footer-copyright small {
+footer a:focus {
+    outline-color: var(--white);
+}
+
+footer h2 {
+    font-size: 18px;
+    margin: 0 0 8px;
+}
+
+footer li {
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+
+footer nav,
+footer > small,
+footer section:last-of-type {
+    flex: 0 0 100%;
+}
+
+footer section {
+    flex: 1 1 220px;
+    min-width: 0;
+    padding: 0;
+}
+
+footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--polar);
+}
+
+footer nav li {
+    margin-bottom: 0;
+}
+
+footer nav li:first-child {
+    margin-right: auto;
+}
+
+footer nav img {
+    display: block;
+    height: 28px;
+    width: auto;
+    max-width: none;
+    padding: 6px 12px;
+    background-color: var(--white);
+    border-radius: 8px;
+}
+
+footer > small {
+    font-size: 13px;
+    text-align: right;
+}
+
+footer section:last-of-type {
+    padding-top: 12px;
+    border-top: 1px solid var(--polar);
+}
+
+footer section:last-of-type small {
     font-size: 12px;
 }
 
 /* ---------- TABLETS ---------- */
-@media (max-width: 900px) {
-    .nav-bar {
-        flex-direction: column;
+@media (min-width: 768px) {
+
+    h1 {
+        font-size: 56px;
     }
 
-    .nav-list {
-        width: 100%;
-    }
-
-    .driver-section {
-        gap: 30px;
-    }
-
-    .driver-text h2 {
-        font-size: 28px;
-    }
-}
-
-/* ---------- PHONES ---------- */
-@media (max-width: 600px) {
-    .nav-list {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .nav-list li,
-    .nav-list li:first-child,
-    .nav-list li:last-child {
-        flex: 0 0 auto;
-        border: none;
-        padding: 0;
-    }
-
-    .pricing-section h1 {
+    h2 {
         font-size: 36px;
     }
 
-    .pricing-card {
-        flex-basis: 100%;
-        max-width: 420px;
+    header nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header ul {
+        flex: 1;
+        gap: 0;
+    }
+
+    header li {
+        flex: 1;
+        text-align: center;
+        border-right: 2px solid var(--charcoal);
+    }
+
+    header li:first-child,
+    header li:last-child {
+        flex: 0 0 auto;
+        padding: 0 28px;
+        border-right: none;
+    }
+
+    header nav div {
+        margin-left: 24px;
+    }
+
+    main section {
+        padding: 80px 0;
     }
 
     .driver-section {
-        grid-template-columns: 1fr;
-        padding: 50px 24px;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
     }
 
-    .driver-image img {
-        height: 260px;
+    .benefits-list {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .benefits-list ul {
-        grid-template-columns: 1fr;
-    }
-
-    .registration-section,
-    .benefits-section {
-        padding: 55px 24px;
-    }
-
-    .registration-section > h2,
-    .benefits-section > h2 {
-        font-size: 28px;
-    }
-
-    .step {
-        flex-basis: 100%;
-        max-width: 420px;
+    .registration-steps {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     footer {
-        padding: 25px 20px;
+        padding: 20px 48px;
     }
-/* ---------- WHITE BACKGROUNDS ---------- */
-
-body {
-    background-color: #ffffff;
 }
 
-.pricing-section {
-    background-color: #ffffff;
-}
+/* ---------- COMPUTERS ---------- */
+@media (min-width: 1024px) {
 
-.driver-section {
-    background-color: #ffffff;
-}
+    .pricing-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-.benefits-section {
-    background-color: #ffffff;
-}
-
-.benefits-list li {
-    background-color: #ffffff;
-}
-
-.registration-section {
-    background-color: #ffffff;
-}
-
-.registration-steps .step {
-    background-color: #ffffff;
-}
+    .registration-steps {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
