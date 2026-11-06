@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+ 
 /* ---------- COLOURS ----------
    uGo colours */
 :root {
@@ -9,6 +10,69 @@
   --polar-dark: #d4d4d4;   /* a darker polar grey: hover on the footer links */
   --white: #ffffff;
 }
+ 
+ 
+/* ---------- WHOLE PAGE ---------- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--charcoal);
+  background-color: var(--polar);
+}
+ 
+img {
+  max-width: 100%;
+  height: auto;
+}
+ 
+hr {
+  border: 0;
+  border-top: 1px solid var(--charcoal);
+  margin: 0;
+}
+ 
+/* no bullet points */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ 
+li {
+  list-style: none;
+}
+ 
+ 
+/* ---------- TEXT ---------- */
+/* h1 is the biggest, then h2, then h3 and only bold and regular */
+h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: bold;
+  margin: 0 0 24px 0;
+}
+ 
+h2 {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: bold;
+  margin: 0 0 24px 0;
+}
+ 
+h3 {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+}
+ 
+p {
+  margin: 0 0 20px 0;
+}
+ 
+ 
 /* ---------- LINKS ---------- */
 /* no underline, garnet when hovering */
 a {
@@ -26,6 +90,8 @@ button:focus {
   outline: 3px solid var(--garnet);
   outline-offset: 2px;
 }
+ 
+ 
 /* ---------- BUTTONS ---------- */
 /* same size and same rounded corners everywhere */
 button {
@@ -53,7 +119,8 @@ header button:first-child:hover {
   border-color: var(--garnet-dark);
   color: var(--white);
 }
-
+ 
+ 
 /* ---------- HEADER ---------- */
 header {
   background-color: var(--white);
@@ -84,7 +151,7 @@ header ul a:hover {
 }
  
 /* TEAM is the page we are on, so it is bold */
-header li:nth-child(3) a {
+header li:nth-child(4) a {
   font-weight: bold;
 }
  
@@ -106,7 +173,6 @@ header nav div {
   display: flex;
   gap: 16px;
 }
-
 main details summary > div {
     display: flex;
     align-items: center;
