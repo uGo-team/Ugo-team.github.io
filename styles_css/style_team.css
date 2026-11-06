@@ -507,3 +507,117 @@ footer section:last-of-type small {
     width: calc((100% - 80px) / 3);
   }
 }
+ 
+ 
+/* ---------- PHONE SCREENS ---------- */
+/* Same approach as the Pricing page: border-box sizing and a tidy,
+   centred header. Only applies below 768px, so desktop is unchanged. */
+@media (max-width: 767px) {
+ 
+  * {
+    box-sizing: border-box;
+  }
+ 
+  /* no sideways scrolling */
+  body {
+    overflow-x: hidden;
+  }
+ 
+  /* header: logo on top, menu links centred below, buttons at the bottom */
+  header {
+    padding: 16px 20px;
+  }
+ 
+  header nav {
+    align-items: stretch;
+    gap: 16px;
+  }
+ 
+  header ul {
+    justify-content: center;
+    gap: 10px 22px;
+  }
+ 
+  /* logo gets its own centred line */
+  header li:first-child {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+  }
+ 
+  /* buttons side by side, same width, full row */
+  header nav div {
+    width: 100%;
+    gap: 12px;
+  }
+ 
+  header nav div button {
+    flex: 1;
+    padding: 12px 16px;
+  }
+ 
+  /* same side spacing as the Pricing page */
+  main {
+    padding: 0 20px;
+  }
+ 
+  section {
+    padding: 48px 0;
+  }
+ 
+  /* big titles must not run off the screen */
+  h1,
+  h2 {
+    overflow-wrap: break-word;
+  }
+ 
+  /* hero picture box */
+  main section:first-of-type p:last-of-type {
+    min-height: 200px;
+    margin-top: 24px;
+  }
+ 
+  /* team cards: one per row, full width, even spacing */
+  main section:nth-of-type(2) {
+    gap: 24px;
+  }
+ 
+  main section:nth-of-type(2) h2 {
+    margin-bottom: 0;
+  }
+ 
+  article {
+    padding: 28px 20px;
+  }
+ 
+  /* no zoom on touch screens, it makes cards touch the edges */
+  article:hover {
+    transform: none;
+  }
+ 
+  /* about the team: text then picture, stacked */
+  main section:last-of-type img {
+    margin-top: 8px;
+  }
+ 
+  /* footer: stacked and tidy */
+  footer {
+    padding: 20px;
+    gap: 16px 24px;
+  }
+ 
+  footer nav {
+    justify-content: center;
+  }
+ 
+  footer nav li:first-child {
+    flex: 0 0 100%;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+  }
+ 
+  footer > small {
+    text-align: center;
+  }
+}
