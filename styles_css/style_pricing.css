@@ -556,4 +556,40 @@ footer section:last-of-type small {
   .pricing-title {
     margin-top: 36px;
   }
+
+
+/* ---------- ADDITIONAL HOVER ANIMATIONS ---------- */
+
+/* Join as a Driver button */
+
+.driver-text button {
+  transition: transform 0.2s;
+}
+
+.driver-text button:hover {
+  transform: scale(1.05);
+}
+
+/* Benefits cards */
+
+.benefits-list li {
+  transition: transform 0.2s;
+}
+
+.benefits-list li:hover {
+  border-color: var(--garnet-dark);
+  transform: scale(1.05);
+}
+
+/* Registration cards */
+
+.step {
+  transition: transform 0.2s;
+}
+
+.step:hover {
+  border-color: var(--garnet-dark);
+  transform: scale(1.05);
+}
+
 }
