@@ -201,7 +201,7 @@ main section {
 
 .pricing-section {
   text-align: center;
-  background-image: url("./images/pricing_background.png");
+  background-image: url("../images/pricing_background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -556,7 +556,7 @@ footer section:last-of-type small {
   .pricing-title {
     margin-top: 36px;
   }
-
+}
 
 /* ---------- ADDITIONAL HOVER ANIMATIONS ---------- */
 
@@ -574,6 +574,7 @@ footer section:last-of-type small {
 
 .benefits-list li {
   transition: transform 0.2s;
+  cursor: pointer;
 }
 
 .benefits-list li:hover {
@@ -585,11 +586,10 @@ footer section:last-of-type small {
 
 .step {
   transition: transform 0.2s;
+  cursor: pointer;
 }
 
 .step:hover {
   border-color: var(--garnet-dark);
   transform: scale(1.05);
-}
-
 }
