@@ -590,19 +590,44 @@ main details[open] {
     }
 }
 /*Addapter le header*/
-@media screen and (max-width: 600px) {
+@media (max-width: 767px) {
 
-    header {
-        padding: 10px;
-    }
+  header {
+    padding: 12px 10px;
+    overflow-x: auto;
+  }
 
-    header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
+  header nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+    width: max-content;
+  }
 
-    header nav a {
-        font-size: 13px;
-    }
+  header ul {
+    flex-wrap: nowrap;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  header li {
+    white-space: nowrap;
+  }
+
+  header img {
+    height: 28px;
+    max-width: none;
+  }
+
+  header nav div {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  header button {
+    font-size: 12px;
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
 }
