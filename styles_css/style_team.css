@@ -513,37 +513,44 @@ footer section:last-of-type small {
     overflow-x: hidden;
   }
  
-  /* header: logo on top, menu links centred below, buttons at the bottom */
+  /* header: same as the Pricing page, logo, menu and buttons stay on one row */
   header {
-    padding: 16px 20px;
+    padding: 12px 10px;
+    overflow-x: auto;
   }
  
   header nav {
-    align-items: stretch;
-    gap: 16px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+    width: max-content;
   }
  
   header ul {
-    justify-content: center;
-    gap: 10px 22px;
-  }
- 
-  /* logo gets its own centred line */
-  header li:first-child {
-    flex: 0 0 100%;
-    display: flex;
-    justify-content: center;
-  }
- 
-  /* buttons side by side, same width, full row */
-  header nav div {
-    width: 100%;
+    flex-wrap: nowrap;
     gap: 12px;
+    flex-shrink: 0;
   }
  
-  header nav div button {
-    flex: 1;
-    padding: 12px 16px;
+  header li {
+    white-space: nowrap;
+  }
+ 
+  header img {
+    height: 28px;
+    max-width: none;
+  }
+ 
+  header nav div {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+ 
+  header button {
+    font-size: 12px;
+    padding: 8px 10px;
+    white-space: nowrap;
   }
  
   /* same side spacing as the Pricing page */
@@ -595,15 +602,28 @@ footer section:last-of-type small {
     gap: 16px 24px;
   }
  
+  /* footer menu: logo and page links stay on one line */
   footer nav {
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 8px;
+  }
+ 
+  footer nav li {
+    white-space: nowrap;
   }
  
   footer nav li:first-child {
-    flex: 0 0 100%;
     margin-right: 0;
-    display: flex;
-    justify-content: center;
+  }
+ 
+  footer nav a {
+    font-size: 12px;
+  }
+ 
+  footer nav img {
+    height: 22px;
+    padding: 4px 8px;
   }
  
   footer > small {
