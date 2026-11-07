@@ -1,5 +1,5 @@
 
- // script_pricing.js - uGo Pricing page
+// script_pricing.js - uGo Pricing page
 
 window.addEventListener("load", function () {
   setupButtons();
@@ -10,13 +10,24 @@ window.addEventListener("load", function () {
 // ---------- LOG IN AND SIGN UP BUTTONS ----------
 // The buttons do not go anywhere, so a message is shown
 function setupButtons() {
+
   // get all the buttons inside the header
   const buttons = document.querySelectorAll("header button");
 
+  // check whether the page is French
+  const isFrench = document.documentElement.lang.startsWith("fr");
+
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
-      const buttonName = buttons[i].textContent;
-      alert(buttonName + " page is coming soon!");
+
+      const buttonName = buttons[i].textContent.trim();
+
+      if (isFrench) {
+        alert("La page « " + buttonName + " » sera bientôt disponible !");
+      } else {
+        alert(buttonName + " page is coming soon!");
+      }
+
     });
   }
 }
@@ -26,6 +37,7 @@ function setupButtons() {
 // when you click on a pricing card, it gets a garnet shadow
 // when you click on it again, the shadow goes away
 function setupPricingCards() {
+
   // get all the pricing cards
   const cards = document.querySelectorAll(".pricing-card");
 
@@ -39,6 +51,7 @@ function setupPricingCards() {
 
 // turns the shadow on or off for a card
 function toggleCard(card) {
+
   if (card.style.boxShadow === "") {
     // add shadow
     card.style.boxShadow = "0 0 12px #8f001a";
