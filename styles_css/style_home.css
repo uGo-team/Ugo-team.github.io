@@ -104,7 +104,7 @@ header button:first-child:hover {
 }
 
 /* current page = bold (4th item = TEAM) */
-header li:nth-child(4) a {
+header li:nth-child(2) a {
   font-weight: bold;
 }
 
@@ -161,12 +161,6 @@ header nav div {
 /*--------------------------------------------------------------------------*/
 /*GLOBAL STYLES*/
 
-/*body{
-    font-family: Poppins, Arial, sans-serif;
-    line-height: 1;
-    letter-spacing: 0.5px;
-}*/
-
 .red-text{
     color:#8f001a;
 }
@@ -178,46 +172,96 @@ header nav div {
 .h2-subtitles{
     color:#8f001a;
     font-size: 30px;
-    margin-left: 270px;
-    margin-bottom: 70px;  
+    margin-left: 20px;
+    margin-bottom: 70px;
+    margin-top: auto; 
 }
 
-.section{ /*space between sections*/
-    margin: 100px auto;
+hr{
+  border: 0;
+  border-top: 1px solid var(--charcoal);
+  margin: 0;
 }
 
 /*--------------------------------------------------------------------------*/
-/*FOR SCROLL MENU*/
+/*MAIN*/
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+main section {
+  padding: 56px 0;
+}
+
+
+/*FOR SCROLL MENUS - in sections 2 and 4*/
+
+.scroll-box{ /*container for the scroll menu and the scroll buttons*/
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 900px;
+  margin: 40px auto 0;
+}
+
 .scroll-menu{
-    margin: 0 auto; /*To center the row*/
-    display: flex; /* flexbox used to make buttons be side by side */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0 auto; /*to center the row*/
+    display: flex; /*flexbox used to make buttons be side by side */
     gap: 16px;
-    overflow-x: auto; /* To scroll horizontally when it doesn't fit */
+    overflow-x: auto; /*to scroll horizontally when it doesn't fit */
     scroll-snap-type: x mandatory;
     max-width: 800px; /*so there's an overflow*/
     margin-top: 20px;
 }
 
-.btn-scroll-left{
-
+.btn-scroll{
+    display: inline-block;
+    background-color: #8f001a;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid #8f001a;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-right: 10px; /*add some space between the buttons */
 }
 
-.btn-scroll-right{
+.btn-scroll:hover, .btn-scroll:active{
+    background-color: white;
+    color: #8f001a;
+}
 
+/*To hide the scroll bar of the scroll menu so only the scroll buttons can be used to scroll:*/
+.scroll-menu::-webkit-scrollbar {
+  display: none
 }
 
 
 /*--------------------------------------------------------------------------*/
 /*SECTION 1: Introduction to uGo and main features*/
-#background-mainMenu{
-    background-color: #f2f2f2;
+.background-mainMenu{
+    background-color: white;
     padding: 50px;
     margin:50px auto;
     border-radius: 40px;
     border: 2px solid #8f001a;
     box-shadow: 1px 1px 1px #2d2d2c;
     max-width: 800px;
+    transition: transform 0.2s;
 }
+
+.background-mainMenu:hover{
+  transform: scale(1.05);
+}
+
 
 #h1-line1{
     text-align: center;
@@ -229,7 +273,9 @@ header nav div {
     text-align: center;
     color:#2d2d2c;
     font-size: 65px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+    line-height: 130%;
+    margin-bottom: 20px auto;
 }
 
 #h1-line3{
@@ -241,7 +287,7 @@ header nav div {
 
 #btn-FindaRide{
     display: inline-block;
-    background-color: #f2f2f2;
+    background-color: white;
     color: #8f001a;
     padding: 10px 20px;
     text-decoration: none;
@@ -255,10 +301,10 @@ header nav div {
 #btn-OfferaRide{
     display: inline-block;
     background-color: #8f001a;
-    color: #f2f2f2;
+    color: white;
     padding: 10px 20px;
     text-decoration: none;
-    border: 2px solid #2d2d2c;
+    border: 2px solid #8f001a;
     border-radius: 30px;
     transition: background-color 0.3s ease;
     text-align: center; 
@@ -266,11 +312,11 @@ header nav div {
 
 #btn-FindaRide:hover, #btn-FindaRide:active{
     background-color: #8f001a;
-    color: #f2f2f2;
+    color: white;
 }
 
 #btn-OfferaRide:hover, #btn-OfferaRide:active{
-    background-color: #f2f2f2;
+    background-color: white;
     color: #8f001a;
 }
 
@@ -280,8 +326,9 @@ header nav div {
 /*SECTION 2: All features*/
 
 .feature-box{ /*for ALL image/button pairs*/
-    border: 2px solid #f2f2f2;
-    box-shadow: 2px 2px 2px #f2f2f2;
+    background-color: white;
+    border: 2px solid #d4d4d4;
+    box-shadow: 1px 1px 1px #d4d4d4;
     border-radius: 40px;
     display: block; /* To center the image */
     margin-left: auto;
@@ -298,11 +345,16 @@ header nav div {
     flex-direction: column;
     align-items: center;
     flex: 0 0 calc((100% - 32px) / 3); /* To make 3 boxes fit in a row/scroll with 16px gap */
+    transition: transform 0.2s;
+}
+
+.feature-card:hover{
+  transform: scale(1.05);
 }
 
 .btn-feature{
     display: inline-block;
-    background-color: #f2f2f2;
+    background-color: white;
     color: #8f001a;
     padding: 10px 20px;
     text-decoration: none;
@@ -315,7 +367,7 @@ header nav div {
 
 .btn-feature:hover, .btn-feature:active{
     background-color: #8f001a;
-    color: #f2f2f2;
+    color: white;
 }
 
 
@@ -328,12 +380,14 @@ header nav div {
     align-items: flex-start;
     gap: 40px; /*space between map and text*/
     flex-wrap: wrap; /*For adaptability: to make map and text stack on top of each other on smaller screens */
+    padding-left: 0;
+    gap: 40 px;
 }
 
 .h2-side{
     color:#8f001a;
     font-size: 30px;
-    margin: 0;
+    margin-left: -10%;
     flex: 0 0 220px;
 }
 
@@ -343,8 +397,11 @@ header nav div {
     border-radius: 40px;
     box-shadow: 1px 1px 1px #2d2d2c;
     margin-bottom: 10px;
+    margin-left: 10%;
     width: 637.5px;
+    /*max-width: 100%*/
     height: 525px;
+    box-sizing: border-box;
 }
 
 
@@ -352,18 +409,24 @@ header nav div {
 /*SECTION 4: Customer Reviews*/
 
 .review-box{
-    border: 2px solid #f2f2f2;
-    box-shadow: 1px 1px 1px #2d2d2c;
+    background-color: white;
+    border: 2px solid #d4d4d4;
+    box-shadow: 1px 1px 1px #d4d4d4;
     border-radius: 40px;
     display: block; /* To center the review */
     flex: 0 0 calc((100% - 32px) / 3); /* To make 3 boxes fit in a row/scroll with 16px gap */
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
-    padding: 20px 20px 50px;
+    padding: 15px 10px; /*20px 20px 50px;*/
     width: 50%;
     box-sizing:border-box;
     scroll-snap-align: start; /* To make the boxes snap to the left when scrolling */
+    transition: transform 0.2s;
+}
+
+.review-box:hover{
+  transform: scale(1.05);
 }
 
 
