@@ -5,14 +5,30 @@ window.addEventListener("load", function () {
   setupCardEffects()
 });
 
-// ---------- LOG IN AND SIGN UP BUTTONS ----------
+// ---------- LANGUAGE ----------
+// true on the French page (<html lang="fr-CA">)
+function isFrench() {
+  return document.documentElement.lang.toLowerCase().startsWith("fr");
+}
+
+
+// ---------- LOG IN AND SIGN UP BUTTONS AND HELP CENTRE LINK----------
+// The buttons do not go anywhere, so a message is shown
 function setupButtons() {
-  const buttons = document.querySelectorAll("header button");
+  // get all the buttons inside the header
+  const buttons = document.querySelectorAll("header button, #help-link");
 
   for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", function () {
-      const buttonName = buttons[i].textContent.trim();
-      alert(buttonName + " page is coming soon!");
+    buttons[i].addEventListener("click", function (event) {
+
+      event.preventDefault(); //to stop "#" link from returning to the top of the page
+      const buttonName = buttons[i].textContent;
+
+      if (isFrench()) {
+        alert("La page « " + buttonName + " » sera bientôt disponible!");
+      } else {
+        alert(buttonName + " page is coming soon!");
+      }
     });
   }
 }

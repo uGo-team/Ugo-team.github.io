@@ -7,18 +7,20 @@ window.addEventListener("load", function () {
 });
 
 
-// ---------- LOG IN AND SIGN UP BUTTONS ----------
+// ---------- LOG IN AND SIGN UP BUTTONS AND HELP CENTRE LINK ----------
 // The buttons do not go anywhere, so a message is shown
 function setupButtons() {
 
   // get all the buttons inside the header
-  const buttons = document.querySelectorAll("header button");
+  const buttons = document.querySelectorAll("header button, #help-link");
 
   // check whether the page is French
   const isFrench = document.documentElement.lang.startsWith("fr");
 
   for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", function () {
+    buttons[i].addEventListener("click", function (event) {
+
+      event.preventDefault(); //to stop "#" link from returning to the top of the page
 
       const buttonName = buttons[i].textContent.trim();
 
