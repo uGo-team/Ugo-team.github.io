@@ -113,8 +113,8 @@ header button:first-child {
 
 button:hover,
 header button:first-child:hover {
-  background-color: var(--garnet-dark);
-  border-color: var(--garnet-dark);
+  background-color: var(--garnet);
+  border-color: var(--garnet);
   color: var(--white);
 }
 
