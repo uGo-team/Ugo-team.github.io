@@ -200,17 +200,14 @@ main section:last-of-type h2::first-line {
  
  
 /* ---------- HERO---------- */
-/* box where the group picture will go */
-main section:first-of-type p:last-of-type {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 240px;
+/* group picture: whole photo is shown, nothing is cropped */
+main section:first-of-type img {
+  display: block;
+  width: 100%;
+  height: auto;
   margin-top: 32px;
   border-radius: 16px;
-  background-color: var(--white);
-  font-weight: bold;
-  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
  
  
@@ -248,27 +245,20 @@ article:hover {
   transform: scale(1.05);
 }
  
-/* hover= the initials circle gets darker too */
-article:hover p:first-child {
-  background-color: var(--garnet-dark);
-}
- 
 article p {
   margin-bottom: 6px;
 }
  
-/* circle with the initials */
-article p:first-child {
-  width: 64px;
-  height: 64px;
+/* team photo: round, face centred, no outline */
+article img {
+  display: block;
+  width: 110px;
+  height: 110px;
+  aspect-ratio: 1 / 1;
   margin: 0 auto 20px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 50%;
-  background-color: var(--garnet);
-  color: var(--white);
-  font-weight: bold;
+  object-fit: cover;
+  object-position: center 20%;   /* keeps the face in the circle */
 }
  
 /* name */
@@ -460,10 +450,10 @@ footer section:last-of-type small {
     grid-column: 1;
   }
  
-  main section:first-of-type p:last-of-type {
+  /* hero picture: right column, whole photo shown */
+  main section:first-of-type img {
     grid-column: 2;
     grid-row: 1 / 3;
-    min-height: 360px;
     margin: 0;
   }
  
@@ -523,37 +513,44 @@ footer section:last-of-type small {
     overflow-x: hidden;
   }
  
-  /* header: logo on top, menu links centred below, buttons at the bottom */
+  /* header: same as the Pricing page, logo, menu and buttons stay on one row */
   header {
-    padding: 16px 20px;
+    padding: 12px 10px;
+    overflow-x: auto;
   }
  
   header nav {
-    align-items: stretch;
-    gap: 16px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+    width: max-content;
   }
  
   header ul {
-    justify-content: center;
-    gap: 10px 22px;
-  }
- 
-  /* logo gets its own centred line */
-  header li:first-child {
-    flex: 0 0 100%;
-    display: flex;
-    justify-content: center;
-  }
- 
-  /* buttons side by side, same width, full row */
-  header nav div {
-    width: 100%;
+    flex-wrap: nowrap;
     gap: 12px;
+    flex-shrink: 0;
   }
  
-  header nav div button {
-    flex: 1;
-    padding: 12px 16px;
+  header li {
+    white-space: nowrap;
+  }
+ 
+  header img {
+    height: 28px;
+    max-width: none;
+  }
+ 
+  header nav div {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+ 
+  header button {
+    font-size: 12px;
+    padding: 8px 10px;
+    white-space: nowrap;
   }
  
   /* same side spacing as the Pricing page */
@@ -571,9 +568,8 @@ footer section:last-of-type small {
     overflow-wrap: break-word;
   }
  
-  /* hero picture box */
-  main section:first-of-type p:last-of-type {
-    min-height: 200px;
+  /* hero picture */
+  main section:first-of-type img {
     margin-top: 24px;
   }
  
@@ -606,15 +602,28 @@ footer section:last-of-type small {
     gap: 16px 24px;
   }
  
+  /* footer menu: logo and page links stay on one line */
   footer nav {
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 8px;
+  }
+ 
+  footer nav li {
+    white-space: nowrap;
   }
  
   footer nav li:first-child {
-    flex: 0 0 100%;
     margin-right: 0;
-    display: flex;
-    justify-content: center;
+  }
+ 
+  footer nav a {
+    font-size: 12px;
+  }
+ 
+  footer nav img {
+    height: 22px;
+    padding: 4px 8px;
   }
  
   footer > small {

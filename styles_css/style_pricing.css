@@ -184,7 +184,6 @@ main section {
 }
 
 /* ---------- PRICING TITLE ---------- */
-/* Title above the background image */
 
 .pricing-title {
   text-align: center;
@@ -201,7 +200,7 @@ main section {
 
 .pricing-section {
   text-align: center;
-  background-image: url("./images/pricing_background.png");
+  background-image: url("../images/pricing_background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -368,7 +367,6 @@ main section {
 }
 
 /* ---------- FOOTER ---------- */
-/* Same styling as the Team page */
 
 footer {
   display: flex;
@@ -471,8 +469,6 @@ footer section:last-of-type small {
     font-size: 36px;
   }
 
-  /* Header in one row */
-
   header nav {
     flex-direction: row;
     justify-content: space-between;
@@ -555,5 +551,80 @@ footer section:last-of-type small {
 
   .pricing-title {
     margin-top: 36px;
+  }
+}
+
+/* ---------- ADDITIONAL HOVER ANIMATIONS ---------- */
+
+.driver-text button {
+  transition: transform 0.2s;
+}
+
+.driver-text button:hover {
+  transform: scale(1.05);
+}
+
+.benefits-list li {
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.benefits-list li:hover {
+  border-color: var(--garnet-dark);
+  transform: scale(1.05);
+}
+
+.step {
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.step:hover {
+  border-color: var(--garnet-dark);
+  transform: scale(1.05);
+}
+
+/* ---------- MOBILE HEADER FIX ---------- */
+/* Keep logo, navigation and buttons on one row */
+
+@media (max-width: 767px) {
+
+  header {
+    padding: 12px 10px;
+    overflow-x: auto;
+  }
+
+  header nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+    width: max-content;
+  }
+
+  header ul {
+    flex-wrap: nowrap;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  header li {
+    white-space: nowrap;
+  }
+
+  header img {
+    height: 28px;
+    max-width: none;
+  }
+
+  header nav div {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  header button {
+    font-size: 12px;
+    padding: 8px 10px;
+    white-space: nowrap;
   }
 }
