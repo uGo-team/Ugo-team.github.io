@@ -190,8 +190,7 @@ main details summary h2 {
     margin: 0;
     color: var(--garnet);
     font-size: 22px;
-    transition: color 0.3s ease;
-    transition: letter-spacing 0.3s ease;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
 }
 main details[open] summary h2 {
     color: var(--garnet-dark);
@@ -246,18 +245,6 @@ main details summary {
 section h2{
     font-size: 150%;
 }
-/* Normal image: black and white */
-main details img {
-    filter: grayscale(100%);
-    transition: filter 0.4s ease, transform 0.4s ease;
-}
-
-/* Hover or open: garnet effect */
-main details:hover img,
-main details[open] img {
-    filter: sepia(100%) saturate(400%) hue-rotate(300deg) brightness(70%);
-    transform: scale(1.04);
-}
 main details:hover summary h2 {
     letter-spacing: 1px;
 }
@@ -295,14 +282,56 @@ main h1 {
     text-align: center;
     color: var(--garnet);
     font-size: 36px;
-    margin-bottom: 10px;
+    margin: 0;
+    line-height: 1.2;
 }
-
 main > p:first-of-type {
     text-align: center;
     color: #666;
-    margin-bottom: 35px;
     font-size: 16px;
+    margin: 0 0 100px;
+    line-height: 1.2;
+}
+main > section {
+    margin-bottom: 100px;
+}
+.ugo-title {
+    color: var(--garnet);
+}
+
+.go-title {
+    color: var(--charcoal);
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    justify-content: center;
+    align-items: start;
+    column-gap: 300px;
+    row-gap: 0;
+    margin-bottom: 80px;
+    margin-top: 50px;
+}
+
+main > section {
+    width: 100%;
+}
+main > section details {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+main > h1,
+main > p {
+    grid-column: 1 / -1;
+}
+main > section:nth-of-type(even) {
+    margin-top: 30px;
+}
+main > h1,
+main > p:first-of-type {
+    grid-column: 1 / -1;
 }
 
 /* ---------- FOOTER (small) ---------- */
