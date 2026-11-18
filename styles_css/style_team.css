@@ -119,7 +119,20 @@ header button:first-child:hover {
   border-color: var(--garnet-dark);
   color: var(--white);
 }
- 
+
+.red-text{
+  color: var(--garnet);
+  font-weight: bold;
+}
+
+.black-text{
+  color: var(--charcoal);
+  font-weight: bold;
+}
+
+.bold{
+  font-weight: bold; 
+}
  
 /* ---------- HEADER ---------- */
 header {

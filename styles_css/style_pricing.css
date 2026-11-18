@@ -92,6 +92,19 @@ button:focus {
   outline-offset: 2px;
 }
 
+.red-text{
+  color: var(--garnet);
+  font-weight: bold;
+}
+
+.black-text{
+  color: var(--charcoal);
+  font-weight: bold;
+}
+
+.bold{
+  font-weight: bold;
+}
 /* ---------- BUTTONS ---------- */
 
 button {
