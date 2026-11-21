@@ -72,6 +72,15 @@ p {
   margin: 0 0 20px 0;
 }
  
+/* uGo: "u" garnet, "Go" charcoal */
+.ugo {
+  color: var(--charcoal);
+}
+ 
+.ugo .u {
+  color: var(--garnet);
+}
+ 
  
 /* ---------- LINKS ---------- */
 /* no underline, garnet when hovering */
@@ -151,7 +160,7 @@ header ul a:hover {
 }
  
 /* TEAM is the page we are on, so it is bold */
-header li:nth-child(4) a {
+header li:nth-child(5) a {
   font-weight: bold;
 }
  
