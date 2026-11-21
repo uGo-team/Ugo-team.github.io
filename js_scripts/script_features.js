@@ -2,7 +2,7 @@ window.addEventListener("load", function () {
   setupButtons();
   setupCases();
   addPageTitle();
-  setupCardEffects()
+  setupCardEffects();
 });
 
 // ---------- LANGUAGE ----------
@@ -39,12 +39,15 @@ function setupCases() {
 
   cases.forEach(function (caseElement) {
     caseElement.addEventListener("mouseenter", function () {
-      caseElement.open = true;
-    });
-    caseElement.addEventListener("mouseleave", function () {
-      caseElement.open = false;
-    });
-  });
+    setTimeout(function () {
+        caseElement.open = true;
+    }, 300);
+});
+
+caseElement.addEventListener("mouseleave", function () {
+    caseElement.open = false;
+});
+});
 }
 function addPageTitle() {
     const main = document.querySelector("main");
@@ -55,10 +58,10 @@ function addPageTitle() {
     const description = document.createElement("p");
 
     if (isFrench) {
-        title.textContent = "Découvrez uGo";
+        title.innerHTML = 'Découvrez <span class="ugo-title">u</span><span class="go-title">Go</span>';
         description.textContent = "Explorez les fonctionnalités qui facilitent vos déplacements.";
     } else {
-        title.textContent = "Discover uGo";
+        title.innerHTML = 'Discover <span class="ugo-title">u</span><span class="go-title">Go</span>';
         description.textContent = "Explore the features that make your journey easier.";
     }
     main.prepend(description);
