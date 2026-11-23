@@ -1,5 +1,3 @@
-// script.js - uGo Team page
-
 window.addEventListener("load", function () {
   setupButtons();
   setupTeamCards();
@@ -7,21 +5,21 @@ window.addEventListener("load", function () {
 
 
 // ---------- LANGUAGE ----------
-// true on the French page (<html lang="fr-CA">)
+//French page
 function isFrench() {
   return document.documentElement.lang.toLowerCase().startsWith("fr");
 }
 
 
-// ---------- LOG IN AND SIGN UP BUTTONS AND HELP CENTRE LINK----------
-// The buttons do not go anywhere, so a message is shown
+// ---------- LOG IN, SIGN UP BUTTONS AND HELP CENTRE LINK----------
+// The buttons doesnt go anywhere, so a message is shown
 function setupButtons() {
   // get all the buttons inside the header
   const buttons = document.querySelectorAll("header button, #help-link");
 
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function (event) {
-      event.preventDefault(); //to stop "#" link from returning to the top of the page
+      event.preventDefault(); //to stop "#" link from going to the top of the page
       const buttonName = buttons[i].textContent;
 
       if (isFrench()) {
@@ -35,9 +33,7 @@ function setupButtons() {
 
 
 // ---------- TEAM CARDS ----------
-// when you click on a card, it gets a garnet shadow.
-// only one card can have the shadow at a time.
-// click on the same card again and the shadow goes away
+// when you click on a card, it gets a garnet shadow(only one at a time).
 function setupTeamCards() {
   // get all the team cards
   const cards = document.querySelectorAll("article");
